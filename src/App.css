@@ -1,0 +1,317 @@
+.ml-auto {
+  font-family: 'Source Sans Pro', sans-serif;
+  size: 15px;
+}
+.search-icon {
+  font-size: 25px;
+}
+.btn {
+  width: 130px;
+  padding: 0;
+  margin: 0 !important;
+}
+
+/* _________________subscribe_section__________________ */
+/* .message {
+  margin-top: 25px;
+  text-align: center;
+  color: #1b76d8;
+  letter-spacing: 2px;
+  font-size: 2.5rem;
+  text-transform: capitalize;
+  font-family: 'Lobster', cursive;
+} */
+.subscribe_section {
+  margin-top: 35px;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+.subscribe_section p {
+  color: #1b76d8;
+  letter-spacing: 2px;
+  font-size: 2.5rem;
+  text-transform: capitalize;
+  font-family: 'Fjalla One', sans-serif;
+}
+.subscribe_form input {
+  border-radius: 50px;
+  font-size: 20px;
+  outline: none;
+  padding: 5px 20px;
+  margin: 15px 25px;
+  border: 0.01px solid #1b76d8;
+}
+.subscribe_form button {
+  border-radius: 50px;
+  padding: 9px 10px;
+}
+
+input::placeholder {
+  color: #427ebf;
+}
+
+@media only screen and (max-width: 768px) {
+  .subscribe_section p {
+    text-align: center;
+    letter-spacing: 0.5px;
+    font-size: 2rem;
+  }
+  .subscribe_section {
+    margin-top: 20px;
+    flex-wrap: wrap;
+    flex-direction: column;
+  }
+  .subscribe_form input {
+    border-radius: 50px;
+    font-size: 12px;
+    padding: 5;
+    margin: 5px;
+  }
+  .subscribe_form button {
+    border-radius: 50px;
+    padding: 4px 0px;
+    margin: 0;
+  }
+}
+
+/* -----------ARROWS-------------- */
+.arrows {
+  font-size: 50px;
+  color: #1b76d8;
+}
+
+/* _____________HEADING_SECTION_____________ */
+.heading-section {
+  margin-top: 50px;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+.heading-section p {
+  font-size: 25px;
+}
+.heading-section a {
+  border-radius: 50px;
+  padding: 3px 10px;
+  background-color: #1b76d8;
+  color: white;
+}
+
+.date {
+  font-size: 16px;
+  color: #1b76d8;
+  font-weight: lighter;
+  font-style: italic;
+  font-family: sans-serif;
+}
+::placeholder {
+  color: #aaa;
+  font-style: italic;
+}
+/* ---------FOOTER----------- */
+
+footer h6 {
+  color: #fff;
+}
+footer p {
+  color: #fff;
+}
+.form-control::placeholder {
+  font-size: 0.95rem;
+  color: #aaa;
+  font-style: italic;
+}
+
+.form-control.shadow-0:focus {
+  box-shadow: none;
+}
+.f-icons li a {
+  padding: 14px;
+  font-size: 35px;
+}
+.list-unstyled a {
+  color: #fff !important;
+  transition: 0.5s ease;
+  font-size: 18px;
+}
+.list-unstyled li {
+  padding: 10px 0;
+}
+.list-unstyled a:hover {
+  border: none !important;
+  text-decoration: none;
+  margin-bottom: 15px;
+  margin-left: 5px;
+}
+@media only screen and (max-width: 768px) {
+  .f-icons li a {
+    font-size: 30px;
+  }
+}
+
+/* -------CARDS----------- */
+.cards {
+  transition: 0.5s ease;
+}
+.cards:hover {
+  margin-top: -5px;
+}
+/* =------------------PAGES----------------- */
+/* _______________page-header_____________ */
+.header {
+  padding-bottom: 50px;
+}
+.page-header {
+  display: flex;
+  flex-wrap: wrap;
+  flex-direction: column;
+  align-items: center;
+  text-align: center;
+}
+.page-header h1 {
+  margin-top: 30px;
+  font-family: Verdana, Geneva, Tahoma, sans-serif;
+}
+.page-header p {
+  margin-top: 15px;
+  font-family: Verdana, Geneva, Tahoma, sans-serif;
+  color: #788286;
+  font-size: 22px;
+  padding: 0 50px;
+  line-height: 25px;
+  text-align: center;
+}
+@media only screen and (max-width: 768px) {
+  .page-header p {
+    margin-top: 5px;
+    font-size: 20px;
+    padding: 0 0px;
+    line-height: 20px;
+  }
+}
+
+/* _____________justinpage___________________ */
+.justinpage {
+  display: flex;
+  width: 100%;
+  justify-content: center;
+  flex-wrap: wrap;
+  align-items: center;
+}
+.justinpage .card {
+  width: 20rem;
+  margin: 15px;
+}
+.justinpage .card {
+  transition: 1s ease-in-out;
+  box-shadow: 3px 3px 6px 0px rgba(0, 0, 0, 0.75);
+  -webkit-box-shadow: 3px 3px 6px 0px rgba(0, 0, 0, 0.75);
+  -moz-box-shadow: 3px 3px 6px 0px rgba(0, 0, 0, 0.75);
+  transition: transform 0.5s ease;
+}
+.header .card:hover {
+  transform: scale(1.03);
+}
+
+/* ------------VIDEOS PAGE------------- */
+.videopage {
+  display: flex;
+  justify-content: center;
+  flex-wrap: wrap;
+}
+.videopage iframe {
+  /* width: 340px; */
+  margin: 20px 10px;
+}
+@media only screen and (max-width: 768px) {
+  .videopage iframe {
+    /* width: 350px; */
+    margin: 25px 5;
+  }
+}
+
+/* ------------------BLOG PAGE-------------- */
+.blogpage span {
+  border-bottom: 1.5px solid black;
+  width: 100%;
+}
+.blogpage {
+  border-left: 1.5px solid black;
+  margin-top: 50px;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  transition: 0.54s ease-out;
+}
+.blogpage:hover {
+  box-shadow: -3px 3px 4px 1px rgba(0, 0, 0, 0.75);
+  -webkit-box-shadow: -3px 3px 4px 1px rgba(0, 0, 0, 0.75);
+  -moz-box-shadow: -3px 3px 4px 1px rgba(0, 0, 0, 0.75);
+}
+.blogpage h1 {
+  font-weight: bold;
+  padding: 15px;
+  border-left: 0;
+}
+.blogpage img {
+  margin-top: 25px;
+  width: 70%;
+}
+.blogpage p {
+  text-align: justify;
+  text-indent: 1cm;
+  font-size: 20px;
+  padding: 15px;
+  margin: 15px;
+}
+.blogpage p::first-letter {
+  font-size: 150%;
+  color: #1b76d8;
+  letter-spacing: 1px;
+}
+
+@media only screen and (max-width: 768px) {
+  .blogpage {
+    border-left: 1.2px solid black;
+  }
+  .blogpage:hover {
+    box-shadow: none;
+  }
+  .blogpage h1 {
+    font-size: 22px;
+    margin: 5px;
+    padding: 2px;
+    border-left: 0;
+  }
+  .blogpage img {
+    margin-top: 25px;
+    width: 90%;
+  }
+  .blogpage p {
+    text-indent: 0.5cm;
+    font-size: 18px;
+    padding: 5px;
+    margin: 5px;
+  }
+  .blogpage p::first-letter {
+    font-size: 150%;
+    color: #1b76d8;
+    letter-spacing: 1px;
+  }
+}
+/* ___________SHARE BUTTONS______________ */
+.social-icons {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+.social-icons * {
+  margin: 10px;
+}
+.social-icon-text {
+  margin-top: 15px;
+  text-align: center;
+  font-style: italic;
+  font-size: 20px;
+}
