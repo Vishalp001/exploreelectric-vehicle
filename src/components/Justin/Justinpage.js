@@ -46,17 +46,17 @@ const Justinpage = () => {
           </div>
           <div className='justinpage'>
             {justinpage.map((item) => {
-              const { id, image, title, date, text, source } = item
               return (
-                <Card key={id}>
-                  <Card.Img variant='top' src={image} />
+                <Card key={item.id}>
+                  <Card.Img variant='top' src={item.image} />
                   <Card.Body>
                     <Card.Title>
-                      <h5> {title} </h5> <p className='date'>{date}</p>
+                      <h5> {item.title} </h5>{' '}
+                      <p className='date'>{item.date}</p>
                     </Card.Title>
-                    <Card.Text>{text}</Card.Text>
+                    <Card.Text>{item.text}</Card.Text>
                     <p>
-                      Source: <a href=''>{source}</a>
+                      Source: <a href=''>{item.source}</a>
                     </p>
                   </Card.Body>
                 </Card>

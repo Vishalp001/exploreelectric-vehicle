@@ -46,7 +46,7 @@ const Justinpage = () => {
               We'll have a new story for you each week.
             </p>
           </div>
-          <div className='justinpage'>
+          <div className='exploreevpage'>
             {exploreevpage.map((item) => {
               return (
                 <Card key={item.id} style={{ width: '20rem' }}>

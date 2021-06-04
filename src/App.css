@@ -12,15 +12,7 @@
 }
 
 /* _________________subscribe_section__________________ */
-/* .message {
-  margin-top: 25px;
-  text-align: center;
-  color: #1b76d8;
-  letter-spacing: 2px;
-  font-size: 2.5rem;
-  text-transform: capitalize;
-  font-family: 'Lobster', cursive;
-} */
+
 .subscribe_section {
   margin-top: 35px;
   display: flex;
@@ -151,11 +143,25 @@ footer p {
 }
 
 /* -------CARDS----------- */
-.cards {
-  transition: 0.5s ease;
+.card {
+  border-radius: 25px;
+  border: 0.5px solid black;
+  box-shadow: 0px 0px 4px 3px rgba(220, 220, 220, 0.75);
+  -webkit-box-shadow: 0px 0px 4px 3px rgba(220, 220, 220, 0.75);
+  -moz-box-shadow: 0px 0px 4px 3px rgba(220, 220, 220, 0.75);
 }
-.cards:hover {
-  margin-top: -5px;
+.card img {
+  border-radius: 25px 25px 0 0;
+}
+.card h5 {
+  font-family: 'Space Grotesk', sans-serif;
+}
+.card p {
+  font-family: 'Inter', sans-serif;
+  font-family: 'Space Grotesk', sans-serif;
+}
+.cards {
+  min-height: 450px;
 }
 /* =------------------PAGES----------------- */
 /* _______________page-header_____________ */
@@ -194,16 +200,15 @@ footer p {
 /* _____________justinpage___________________ */
 .justinpage {
   display: flex;
-  width: 100%;
-  justify-content: center;
   flex-wrap: wrap;
   align-items: center;
 }
+
 .justinpage .card {
-  width: 20rem;
-  margin: 15px;
-}
-.justinpage .card {
+  margin: 10px;
+  width: 21rem;
+  max-height: 620px;
+  min-height: 620px;
   transition: 1s ease-in-out;
   box-shadow: 3px 3px 6px 0px rgba(0, 0, 0, 0.75);
   -webkit-box-shadow: 3px 3px 6px 0px rgba(0, 0, 0, 0.75);
@@ -211,9 +216,34 @@ footer p {
   transition: transform 0.5s ease;
 }
 .header .card:hover {
-  transform: scale(1.03);
+  transform: scale(1.01);
 }
-
+/* ------------EXPLORE EV PAGE----------------- */
+.exploreevpage {
+  display: flex;
+  flex-wrap: wrap;
+}
+.exploreevpage .card {
+  margin: 10px;
+  transition: 1s ease-in-out;
+  box-shadow: 3px 3px 6px 0px rgba(0, 0, 0, 0.75);
+  -webkit-box-shadow: 3px 3px 6px 0px rgba(0, 0, 0, 0.75);
+  -moz-box-shadow: 3px 3px 6px 0px rgba(0, 0, 0, 0.75);
+  transition: transform 0.5s ease;
+}
+.trendingpage {
+  display: flex;
+  flex-wrap: wrap;
+}
+.trendingpage .card {
+  width: 100%;
+  margin: 10px;
+  transition: 1s ease-in-out;
+  box-shadow: 3px 3px 6px 0px rgba(0, 0, 0, 0.75);
+  -webkit-box-shadow: 3px 3px 6px 0px rgba(0, 0, 0, 0.75);
+  -moz-box-shadow: 3px 3px 6px 0px rgba(0, 0, 0, 0.75);
+  transition: transform 0.5s ease;
+}
 /* ------------VIDEOS PAGE------------- */
 .videopage {
   display: flex;

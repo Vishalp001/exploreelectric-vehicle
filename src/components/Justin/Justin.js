@@ -91,7 +91,10 @@ const Justin = () => {
         {justin.map((item) => {
           return (
             <div key={item.id}>
-              <Card className='cards' style={{ width: `0 ${width}px` }}>
+              <Card
+                className='cards'
+                style={{ width: `0 ${width}px`, maxHeight: '600px' }}
+              >
                 <Card.Img variant='top' src={item.image} alt='image' />
                 <Card.Body>
                   <Card.Title>
