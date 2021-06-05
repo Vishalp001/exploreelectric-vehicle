@@ -1,3 +1,4 @@
+@import url('https://fonts.googleapis.com/css2?family=Roboto:wght@500&display=swap');
 .banner {
   margin-top: 20px;
   display: flex;
@@ -8,6 +9,22 @@
 }
 .banner .col {
   width: 100%;
+}
+.col h1 {
+  font-family: 'Roboto', sans-serif;
+  font-weight: 900;
+  letter-spacing: 2px;
+  width: 250px;
+}
+.col p {
+  color: rgb(52, 61, 72, 0.87);
+  font-size: 20px;
+  text-align: justify;
+  font-weight: 400;
+  font-style: normal;
+}
+.col p {
+  width: 300px;
 }
 
 .col img {
@@ -23,45 +40,57 @@
   }
 }
 /* ------------------1St col------------- */
-.p1 {
-  font-weight: bold;
-  width: 280px;
-  text-align: center;
-  border-radius: 10px;
-  box-shadow: 0 0 1px #5e5b5b;
-  padding: 1px;
-}
-.p1 span {
-  color: #ff0000;
-}
+
 /* -----------SUBSCRIBE FORM------------ */
-.header-sub {
-  display: flex;
-  flex-wrap: wrap;
-  margin: 15px;
+::placeholder {
+  font-family: 'Roboto', sans-serif;
+  font-style: normal;
+  line-height: 21px;
+  color: #343d48 !important;
+  font-size: 16px !important;
 }
 .header-sub input {
-  padding: 10px 25px;
-  border-radius: 5px;
+  border-radius: 15px;
   outline: none;
-  border: 0.5px solid #23cfc6;
-  background: #f2f2f2;
-}
-.header-sub ::placeholder {
-  color: #5e5b5b !important;
+  border: 2px solid #d0caf5;
+  background: #f3f2fa;
+  width: 318px;
+  height: 52px;
+  padding: 0 15px;
+  font-family: 'Roboto', sans-serif;
+  font-style: normal;
+  line-height: 21px;
+  color: #343d48 !important;
+  font-size: 16px !important;
 }
 .header-sub button {
-  border-radius: 5px;
-  margin-left: 15px;
+  background: #00c9ff; /* fallback for old browsers */
+  background: -webkit-linear-gradient(
+    to right,
+    #92fe9d,
+    #00c9ff
+  ); /* Chrome 10-25, Safari 5.1-6 */
+  background: linear-gradient(
+    to right,
+    #92fe9d,
+    #00c9ff
+  ); /* W3C, IE 10+/ Edge, Firefox 16+, Chrome 26+, Opera 12+, Safari 7+ */
+  width: 318px;
+  height: 52px;
+  padding: 0 15px;
+  font-family: 'Roboto', sans-serif;
+  font-style: normal;
+  line-height: 21px;
+  border-radius: 15px;
   outline: none;
-  border: none;
-  color: #2f455c;
-  background: #23cfc6;
-  padding: 10px 25px;
+  border: 0;
+  text-transform: uppercase;
+  color: #fff;
+  margin-top: 15px;
 }
-@media only screen and (max-width: 1280px) {
+@media (min-width: 1520px) {
   .header-sub button {
-    width: 230px;
-    margin: 15px 0;
+    width: 118px;
+    margin-left: 15px;
   }
 }
