@@ -64,7 +64,9 @@ input::placeholder {
   font-size: 50px;
   color: #23cfc6;
 }
-
+.arrows:hover {
+  color: #008e87;
+}
 /* _____________HEADING_SECTION_____________ */
 .heading-section {
   margin-top: 50px;
