@@ -12,7 +12,6 @@ const Homepage = () => {
     <>
       <Navbarhome />
       <Carousel />
-      <Subscribe />
       <Justin />
       <Trending />
       <Videos />

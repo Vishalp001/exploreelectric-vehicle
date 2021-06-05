@@ -5,19 +5,16 @@ import Subscribe from '../Subscribe'
 import Navbarpages from '../Navbar/Navbarpages'
 const Justinpage = () => {
   const [justinpage, setJustinpage] = useState([])
-  const [loading, setLoading] = useState(false)
 
-  const ref = firebase.firestore().collection('justin')
+  const ref = firebase.firestore().collection('justinimage')
 
   function getJustinpage() {
-    setLoading(true)
     ref.onSnapshot((querySnapshot) => {
       const items = []
       querySnapshot.forEach((doc) => {
         items.push(doc.data())
       })
       setJustinpage(items)
-      setLoading(false)
     })
   }
 
@@ -25,13 +22,6 @@ const Justinpage = () => {
     getJustinpage()
   }, [])
 
-  if (loading) {
-    return (
-      <div className='spinner-border text-primary' role='status'>
-        <span className='sr-only'>Loading...</span>
-      </div>
-    )
-  }
   return (
     <>
       <Navbarpages />
@@ -49,16 +39,6 @@ const Justinpage = () => {
               return (
                 <Card key={item.id}>
                   <Card.Img variant='top' src={item.image} />
-                  <Card.Body>
-                    <Card.Title>
-                      <h5> {item.title} </h5>{' '}
-                      <p className='date'>{item.date}</p>
-                    </Card.Title>
-                    <Card.Text>{item.text}</Card.Text>
-                    <p>
-                      Source: <a href=''>{item.source}</a>
-                    </p>
-                  </Card.Body>
                 </Card>
               )
             })}

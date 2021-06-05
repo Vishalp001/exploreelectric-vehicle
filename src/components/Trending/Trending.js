@@ -70,7 +70,7 @@ export default () => {
       style={{ padding: `10 ${chevronWidth}px` }}
     >
       <div className='heading-section'>
-        <p style={{ color: '#1b76d8' }}>
+        <p style={{ color: '#23cfc6' }}>
           <VscPinned /> Trending
         </p>
         <Link to='/trendingpage'>View All</Link>

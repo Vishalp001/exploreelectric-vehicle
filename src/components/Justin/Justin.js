@@ -9,19 +9,16 @@ import { Link } from 'react-router-dom'
 
 const Justin = () => {
   const [justin, setJustin] = useState([])
-  const [loading, setLoading] = useState(false)
 
-  const ref = firebase.firestore().collection('justin')
+  const ref = firebase.firestore().collection('justinimage')
 
   function getJustin() {
-    setLoading(true)
     ref.onSnapshot((querySnapshot) => {
       const items = []
       querySnapshot.forEach((doc) => {
         items.push(doc.data())
       })
       setJustin(items)
-      setLoading(false)
     })
   }
 
@@ -32,7 +29,7 @@ const Justin = () => {
   const [activeItemIndex, setActiveItemIndex] = useState(0)
   let chevronWidth = 40
   let numbofitem = 3
-  let width = 450
+  let width = 300
 
   const isMobileSmall = useMediaQuery({ query: '(max-width: 325px)' })
   const isMobileMid = useMediaQuery({ query: '(max-width: 375px)' })
@@ -56,13 +53,6 @@ const Justin = () => {
     chevronWidth = 0
   }
 
-  if (loading) {
-    return (
-      <div className='spinner-border text-primary ' role='status'>
-        <span className='sr-only'>Loading...</span>
-      </div>
-    )
-  }
   return (
     <div
       id='justin'
@@ -70,7 +60,7 @@ const Justin = () => {
       style={{ padding: `10 ${chevronWidth}px` }}
     >
       <div className='heading-section'>
-        <p style={{ color: '#1b76d8' }}>
+        <p style={{ color: '#23cfc6' }}>
           <VscPinned /> Just In
         </p>
         <Link to='/justinpage'>View All</Link>
@@ -96,15 +86,6 @@ const Justin = () => {
                 style={{ width: `0 ${width}px`, maxHeight: '600px' }}
               >
                 <Card.Img variant='top' src={item.image} alt='image' />
-                <Card.Body>
-                  <Card.Title>
-                    <h5> {item.title} </h5> <p className='date'>{item.date}</p>
-                  </Card.Title>
-                  <Card.Text>{item.text}</Card.Text>
-                  <p>
-                    Source: <a href=''>News</a>
-                  </p>
-                </Card.Body>
               </Card>
             </div>
           )
