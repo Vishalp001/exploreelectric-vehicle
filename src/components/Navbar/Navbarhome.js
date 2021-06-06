@@ -15,7 +15,7 @@ const Navbarjs = () => {
           <img
             src={logo}
             width='200'
-            height='50'
+            height='70'
             className='d-inline-block align-top'
             alt='logo'
           />
