@@ -10,9 +10,8 @@ const Header = () => {
           <span>Electric Vehicle</span> <br /> Made Simple
         </h1>
         <p>
-          Join XplorEV and get updated with the lastest, trending news and
-          information on Electric Vehicles, especially curated for for you in
-          simplified English.
+          Join <span>XplorEV</span> and get updated with the lastest, trending
+          news and information on Electric Vehicles.
         </p>
         {/* --------------FORM---------------- */}
         <form id='subscribe'>
