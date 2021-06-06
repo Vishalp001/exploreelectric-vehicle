@@ -3,25 +3,22 @@ import firebase from '../../firebase'
 import ItemsCarousel from 'react-items-carousel'
 import { IoArrowForwardCircle, IoArrowBackCircleSharp } from 'react-icons/io5'
 import { useMediaQuery } from 'react-responsive'
-import { VscPinned } from 'react-icons/vsc'
+import { IoVideocamSharp } from 'react-icons/io5'
 import { Link } from 'react-router-dom'
 
 export default () => {
   const [activeItemIndex, setActiveItemIndex] = useState(0)
   const [videos, setvideos] = useState([])
-  const [loading, setLoading] = useState(false)
 
   const ref = firebase.firestore().collection('videos')
 
   function getVideos() {
-    setLoading(true)
     ref.onSnapshot((querySnapshot) => {
       const items = []
       querySnapshot.forEach((doc) => {
         items.push(doc.data())
       })
       setvideos(items)
-      setLoading(false)
     })
   }
 
@@ -32,7 +29,7 @@ export default () => {
   let chevronWidth = 40
   let numbofitem = 3
   let width = 350
-  let gutter = 5
+  let gutter = 25
 
   const isMobileSmall = useMediaQuery({ query: '(max-width: 325px)' })
   const isMobileMid = useMediaQuery({ query: '(max-width: 375px)' })
@@ -56,13 +53,6 @@ export default () => {
     numbofitem = 2
     chevronWidth = 0
   }
-  if (loading) {
-    return (
-      <div className='spinner-border text-primary' role='status'>
-        <span className='sr-only'>Loading...</span>
-      </div>
-    )
-  }
 
   return (
     <div
@@ -72,7 +62,7 @@ export default () => {
     >
       <div className='heading-section'>
         <p className='cardHeading'>
-          <VscPinned /> Videos
+          <IoVideocamSharp /> Videos
         </p>
         <Link to='/videospage'>Show More</Link>
       </div>

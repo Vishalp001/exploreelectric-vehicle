@@ -4,25 +4,22 @@ import ItemsCarousel from 'react-items-carousel'
 import { Card } from 'react-bootstrap'
 import { IoArrowForwardCircle, IoArrowBackCircleSharp } from 'react-icons/io5'
 import { useMediaQuery } from 'react-responsive'
-import { VscPinned } from 'react-icons/vsc'
+import { BsSearch } from 'react-icons/bs'
 import { Link } from 'react-router-dom'
 
 export default () => {
   const [activeItemIndex, setActiveItemIndex] = useState(0)
   const [exploreev, setexploreev] = useState([])
-  const [loading, setLoading] = useState(false)
 
   const ref = firebase.firestore().collection('exploreev')
 
   function getexploreev() {
-    setLoading(true)
     ref.onSnapshot((querySnapshot) => {
       const items = []
       querySnapshot.forEach((doc) => {
         items.push(doc.data())
       })
       setexploreev(items)
-      setLoading(false)
     })
   }
 
@@ -31,7 +28,7 @@ export default () => {
   }, [])
 
   let chevronWidth = 40
-  let numbofitem = 4
+  let numbofitem = 3
   let width = 300
 
   const isMobileSmall = useMediaQuery({ query: '(max-width: 325px)' })
@@ -56,23 +53,11 @@ export default () => {
     chevronWidth = 0
   }
 
-  if (loading) {
-    return (
-      <div className='spinner-border text-primary ' role='status'>
-        <span className='sr-only'>Loading...</span>
-      </div>
-    )
-  }
-
   return (
-    <div
-      id='exploreev'
-      className='container'
-      style={{ padding: `10 ${chevronWidth}px` }}
-    >
+    <div id='exploreev' className='container'>
       <div className='heading-section'>
         <p className='cardHeading'>
-          <VscPinned /> Explore EV
+          <BsSearch /> Explore EV
         </p>
         <Link to='/exploreevpage'>View All</Link>
       </div>
@@ -81,7 +66,7 @@ export default () => {
         requestToChangeActive={setActiveItemIndex}
         activeItemIndex={activeItemIndex}
         numberOfCards={numbofitem}
-        gutter={5}
+        gutter={25}
         leftChevron={<IoArrowBackCircleSharp className='arrows' />}
         rightChevron={<IoArrowForwardCircle className='arrows' />}
         outsideChevron
@@ -91,14 +76,17 @@ export default () => {
         {exploreev.map((item) => {
           return (
             <div key={item.id}>
-              <Card className='cards' style={{ width: `0 ${width}px` }}>
+              <Card
+                className='cards exploreevPage'
+                style={{ width: `0 ${width}px` }}
+              >
                 <Card.Img variant='top' src={item.image} />
                 <Card.Body>
                   <Card.Title>
                     <h5> {item.title} </h5>
                   </Card.Title>
                   <Card.Text>
-                    {`${item.text.substring(0, 150)}...`}
+                    {`${item.text.substring(0, 75)}...`}
                     <Link to={`/exploreevblog/${item.id}`}>Read More</Link>
                   </Card.Text>
                 </Card.Body>
