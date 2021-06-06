@@ -39,21 +39,26 @@ export default () => {
   const isTabletMid = useMediaQuery({ query: '(max-width: 768px)' })
   const isTabletCeil = useMediaQuery({ query: '(max-width: 1024px)' })
 
-  // const isLaptopFloor = useMediaQuery({ query: '(max-width: 1025px)' })
-  // const isLaptopCeil = useMediaQuery({ query: '(max-width: 1440px)' })
+  const isLaptopFloor = useMediaQuery({ query: '(max-width: 1025px)' })
+  const isLaptopCeil = useMediaQuery({ query: '(max-width: 1440px)' })
 
-  // const isXHDFloor = useMediaQuery({ query: '(max-width: 1441px)' })
-  // const isXHDCeil = useMediaQuery({ query: '(max-width: 4096px)' })
+  const isXHDFloor = useMediaQuery({ query: '(max-width: 1441px)' })
+  const isXHDCeil = useMediaQuery({ query: '(max-width: 4096px)' })
 
   if ((isMobileMid, isMobileSmall, isMobileFloor)) {
     numbofitem = 1
     chevronWidth = 25
+    width = 350
     gutter = 0
   } else if ((isTabletFloor, isTabletMid, isTabletCeil)) {
     numbofitem = 2
-    chevronWidth = 0
+    chevronWidth = 25
+    width = 350
+  } else if ((isLaptopFloor, isLaptopCeil)) {
+    width = 350
+  } else if ((isXHDFloor, isXHDCeil)) {
+    width = 450
   }
-
   return (
     <div
       id='videos'
@@ -72,8 +77,18 @@ export default () => {
         activeItemIndex={activeItemIndex}
         numberOfCards={numbofitem}
         gutter={gutter}
-        leftChevron={<IoArrowBackCircleSharp className='arrows' />}
-        rightChevron={<IoArrowForwardCircle className='arrows' />}
+        leftChevron={
+          <IoArrowBackCircleSharp
+            style={{ padding: '0', margin: '0' }}
+            className='arrows'
+          />
+        }
+        rightChevron={
+          <IoArrowForwardCircle
+            style={{ padding: '0', margin: '0' }}
+            className='arrows'
+          />
+        }
         outsideChevron
         chevronWidth={chevronWidth}
         disableSwipe={false}
