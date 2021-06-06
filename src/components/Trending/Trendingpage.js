@@ -37,7 +37,7 @@ const Justinpage = () => {
     <>
       <Navbarpages />
       <div className='header'>
-        <div className=' container'>
+        <div className='container'>
           <div className='page-header'>
             <h1>All Trending Topics</h1>
             <p>

@@ -4,7 +4,7 @@ import svg from '../images/car.svg'
 const Carousel = () => {
   return (
     <div className='banner container'>
-      <div className='col'>
+      <div className='col '>
         <h1>Financial News Made Simple</h1>
         <p>
           Join Finshots and get your daily dose of the latest, most important
