@@ -71,7 +71,7 @@ export default () => {
       style={{ padding: `0 ${chevronWidth}px` }}
     >
       <div className='heading-section'>
-        <p style={{ color: '#23cfc6' }}>
+        <p className='cardHeading'>
           <VscPinned /> Videos
         </p>
         <Link to='/videospage'>Show More</Link>

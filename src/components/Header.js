@@ -1,11 +1,14 @@
 import React from 'react'
 import '../components/styles/header.css'
 import svg from '../images/car.svg'
-const Carousel = () => {
+
+const Header = () => {
   return (
     <div className='banner container'>
       <div className='col '>
-        <h1>Financial News Made Simple</h1>
+        <h1>
+          <span>Electric Vehicle</span> <br /> Made Simple
+        </h1>
         <p>
           Join Finshots and get your daily dose of the latest, most important
           Financial developments delivered in plain English. In less than 3
@@ -33,4 +36,4 @@ const Carousel = () => {
   )
 }
 
-export default Carousel
+export default Header

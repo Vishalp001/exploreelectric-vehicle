@@ -15,7 +15,9 @@
   font-family: 'Roboto', sans-serif;
   font-weight: 900;
   letter-spacing: 2px;
-  width: 250px;
+}
+.col h1 span {
+  color: #264363;
 }
 .col p {
   margin-top: 15px;

@@ -9,6 +9,7 @@ import { Link } from 'react-router-dom'
 
 const Justin = () => {
   const [justin, setJustin] = useState([])
+  const [activeItemIndex, setActiveItemIndex] = useState(0)
 
   const ref = firebase.firestore().collection('justinimage')
 
@@ -26,10 +27,9 @@ const Justin = () => {
     getJustin()
   }, [])
 
-  const [activeItemIndex, setActiveItemIndex] = useState(0)
   let chevronWidth = 40
   let numbofitem = 3
-  let width = 300
+  let width = 100
 
   const isMobileSmall = useMediaQuery({ query: '(max-width: 325px)' })
   const isMobileMid = useMediaQuery({ query: '(max-width: 375px)' })
@@ -60,7 +60,7 @@ const Justin = () => {
       style={{ padding: `10 ${chevronWidth}px` }}
     >
       <div className='heading-section'>
-        <p style={{ color: '#23cfc6' }}>
+        <p className='cardHeading'>
           <VscPinned /> Just In
         </p>
         <Link to='/justinpage'>View All</Link>
@@ -71,7 +71,7 @@ const Justin = () => {
         requestToChangeActive={setActiveItemIndex}
         activeItemIndex={activeItemIndex}
         numberOfCards={numbofitem}
-        gutter={5}
+        gutter={30}
         leftChevron={<IoArrowBackCircleSharp className='arrows' />}
         rightChevron={<IoArrowForwardCircle className='arrows' />}
         outsideChevron
@@ -81,10 +81,7 @@ const Justin = () => {
         {justin.map((item) => {
           return (
             <div key={item.id}>
-              <Card
-                className='cards'
-                style={{ width: `0 ${width}px`, maxHeight: '600px' }}
-              >
+              <Card className='cards' style={{ width: `0 ${width}px` }}>
                 <Card.Img variant='top' src={item.image} alt='image' />
               </Card>
             </div>

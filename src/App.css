@@ -63,6 +63,9 @@ input::placeholder {
   color: #008e87;
 }
 /* _____________HEADING_SECTION_____________ */
+.cardHeading {
+  color: rgb(5, 176, 150);
+}
 .heading-section {
   margin-top: 50px;
   display: flex;

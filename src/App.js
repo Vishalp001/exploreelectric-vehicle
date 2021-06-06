@@ -1,6 +1,5 @@
 import './App.css'
 import { Route, Switch } from 'react-router-dom'
-import Carousel from './components/Carousel'
 import Footer from './components/Footer'
 import Homepage from './components/Homepage'
 import Justinpage from './components/Justin/Justinpage'
@@ -17,7 +16,6 @@ function App() {
       <ScrollToTop />
       <Switch>
         <Route exact path='/' component={Homepage} />
-        <Route path='/carousel' component={Carousel} />
         <Route path='/justinpage' component={Justinpage} />
         <Route path='/exploreevpage' component={Exploreevpage} />
         <Route path='/trendingpage' component={Trendingpage} />
