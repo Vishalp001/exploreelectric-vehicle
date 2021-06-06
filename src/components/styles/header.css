@@ -17,7 +17,7 @@
   letter-spacing: 2px;
 }
 .col h1 span {
-  color: #264363;
+  color: #185a9d;
 }
 .col p {
   margin-top: 15px;
@@ -67,17 +67,18 @@
   font-size: 16px !important;
 }
 .header-sub button {
-  background: #00c9ff; /* fallback for old browsers */
+  background: #43cea2; /* fallback for old browsers */
   background: -webkit-linear-gradient(
     to right,
-    #92fe9d,
-    #00c9ff
+    #185a9d,
+    #43cea2
   ); /* Chrome 10-25, Safari 5.1-6 */
   background: linear-gradient(
     to right,
-    #92fe9d,
-    #00c9ff
+    #185a9d,
+    #43cea2
   ); /* W3C, IE 10+/ Edge, Firefox 16+, Chrome 26+, Opera 12+, Safari 7+ */
+
   width: 318px;
   height: 52px;
   padding: 0 15px;
