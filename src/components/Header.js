@@ -10,9 +10,9 @@ const Header = () => {
           <span>Electric Vehicle</span> <br /> Made Simple
         </h1>
         <p>
-          Join Finshots and get your daily dose of the latest, most important
-          Financial developments delivered in plain English. In less than 3
-          minutes.
+          Join XplorEV and get updated with the lastest, trending news and
+          information on Electric Vehicles, especially curated for for you in
+          simplified English.
         </p>
         {/* --------------FORM---------------- */}
         <form id='subscribe'>
