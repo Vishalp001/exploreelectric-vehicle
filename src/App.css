@@ -292,6 +292,7 @@ footer {
   display: flex;
   justify-content: space-evenly;
   flex-wrap: wrap;
+  align-items: flex-start;
 }
 .footer-subs h3 {
   font-family: 'Roboto', sans-serif;
@@ -373,7 +374,7 @@ footer {
 }
 /* -----------footer-support----------- */
 .footer-support h3 {
-  margin-top: 50px;
+  margin-top: 40px;
   font-family: 'Roboto', sans-serif;
   font-weight: 900;
   letter-spacing: 2px;
@@ -401,11 +402,29 @@ footer {
   display: flex;
   flex-direction: column;
 }
-.credit {
-  vertical-align: text-bottom;
-}
 .social-icons h3 {
+  text-transform: capitalize;
+  margin-top: 40px;
   font-family: 'Roboto', sans-serif;
   font-weight: 900;
   letter-spacing: 2px;
+}
+
+.credit {
+  background: #43cea2; /* fallback for old browsers */
+  background: -webkit-linear-gradient(
+    to right,
+    #185a9d,
+    #43cea2
+  ); /* Chrome 10-25, Safari 5.1-6 */
+  background: linear-gradient(
+    to right,
+    #185a9d,
+    #43cea2
+  ); /* W3C, IE 10+/ Edge, Firefox 16+, Chrome 26+, Opera 12+, Safari 7+ */
+
+  margin: 0;
+  padding: 5px;
+  color: #f3f2fa;
+  text-align: center;
 }

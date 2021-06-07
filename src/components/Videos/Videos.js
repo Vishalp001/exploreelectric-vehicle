@@ -39,11 +39,11 @@ export default () => {
   const isTabletMid = useMediaQuery({ query: '(max-width: 768px)' })
   const isTabletCeil = useMediaQuery({ query: '(max-width: 1024px)' })
 
-  const isLaptopFloor = useMediaQuery({ query: '(max-width: 1025px)' })
-  const isLaptopCeil = useMediaQuery({ query: '(max-width: 1440px)' })
+  // const isLaptopFloor = useMediaQuery({ query: '(max-width: 1025px)' })
+  // const isLaptopCeil = useMediaQuery({ query: '(max-width: 1440px)' })
 
-  const isXHDFloor = useMediaQuery({ query: '(max-width: 1441px)' })
-  const isXHDCeil = useMediaQuery({ query: '(max-width: 4096px)' })
+  // const isXHDFloor = useMediaQuery({ query: '(max-width: 1441px)' })
+  // const isXHDCeil = useMediaQuery({ query: '(max-width: 4096px)' })
 
   if ((isMobileMid, isMobileSmall, isMobileFloor)) {
     numbofitem = 1
@@ -54,10 +54,6 @@ export default () => {
     numbofitem = 2
     chevronWidth = 25
     width = 350
-  } else if ((isLaptopFloor, isLaptopCeil)) {
-    width = 350
-  } else if ((isXHDFloor, isXHDCeil)) {
-    width = 450
   }
   return (
     <div
