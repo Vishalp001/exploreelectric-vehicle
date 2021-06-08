@@ -3,18 +3,17 @@ import instagram from '../images/instagram.png'
 import youtube from '../images/youtube.png'
 import linkedin from '../images/linkedin.png'
 import twitter from '../images/twitter.png'
+import fb from '../images/fb.png'
 
 const Footer = () => {
   return (
     <>
       <footer>
+        <hr />
         <div className='container footer-section'>
           <div className='footer-subs'>
-            <h3>Xplore with us</h3>
-            <p>
-              Your ultimate destination for the latest news and knowledge on
-              Electric Vehicles.
-            </p>
+            <h3>NEWSLETTER</h3>
+            <p>Don't miss out, Sign Up for the weekly newsletter on EVs.</p>
             <input type='text' placeholder='Enter your email address' />
             <button>Subscribe</button>
           </div>
@@ -22,6 +21,7 @@ const Footer = () => {
           <div className='social-icons'>
             <h3>Connect with us </h3>
             <div>
+              <img src={fb} alt='' />
               <img src={instagram} alt='' />
               <img src={twitter} alt='' />
               <img src={youtube} alt='' />
@@ -32,7 +32,7 @@ const Footer = () => {
           <div className='footer-support'>
             <h3>Help And Support</h3>
             <p>
-              Email us <a href=''> hi@xplore.com </a>
+              Contact Us: <a href=''> aniket@xplorev.com </a>
             </p>
             <ul>
               <li>

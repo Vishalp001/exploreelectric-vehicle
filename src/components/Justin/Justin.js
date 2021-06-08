@@ -82,7 +82,12 @@ const Justin = () => {
           return (
             <div key={item.id}>
               <Card className='cards' style={{ width: `0 ${width}px` }}>
-                <Card.Img variant='top' src={item.image} alt='image' />
+                <Card.Img
+                  style={{ borderRadius: '15px' }}
+                  variant='top'
+                  src={item.image}
+                  alt='image'
+                />
               </Card>
             </div>
           )
