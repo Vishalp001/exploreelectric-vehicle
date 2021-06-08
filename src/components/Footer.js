@@ -12,7 +12,7 @@ const Footer = () => {
         <hr />
         <div className='container footer-section'>
           <div className='footer-subs'>
-            <h3>NEWSLETTER</h3>
+            <h3>Newsletter</h3>
             <p>Don't miss out, Sign Up for the weekly newsletter on EVs.</p>
             <input type='text' placeholder='Enter your email address' />
             <button>Subscribe</button>
