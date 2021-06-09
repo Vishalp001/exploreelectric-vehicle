@@ -91,7 +91,7 @@ const Trendingblog = () => {
                   Also, don't forget to share this article on WhatsApp, LinkedIn
                   and Twitter. Until then...
                 </p>
-                <div className='social-icons'>
+                <div className='share-icons'>
                   <FacebookShareButton
                     url={url}
                     title={item.title}
