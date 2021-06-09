@@ -1,7 +1,6 @@
 import React, { useState, useEffect } from 'react'
 import firebase from '../../firebase'
 import { useParams } from 'react-router-dom'
-import Subscribe from '../Subscribe'
 import Navbarpages from '../Navbar/Navbarpages'
 import ItemsCarousel from 'react-items-carousel'
 import { Card } from 'react-bootstrap'
@@ -81,7 +80,7 @@ const Trendingblog = () => {
           .filter((item) => item.id === id)
           .map((item) => {
             return (
-              <div key={item.id}>
+              <div className='blogContent' key={item.id}>
                 <div className='blogpage'>
                   <h1 className=''>{item.title}</h1>
                   <span></span>
@@ -129,7 +128,6 @@ const Trendingblog = () => {
             )
           })}
       </div>
-      <Subscribe />
       {/* __________________CARDS SECTION_____________________ */}
       <div
         className='container'
@@ -156,7 +154,10 @@ const Trendingblog = () => {
           {trendingblog.map((item) => {
             return (
               <div key={item.id}>
-                <Card className='cards' style={{ width: `0 ${width}px` }}>
+                <Card
+                  className='cards trendingblogcards'
+                  style={{ width: `0 ${width}px` }}
+                >
                   <Card.Img variant='top' src={item.image} />
                   <Card.Body>
                     <Card.Title>

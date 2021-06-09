@@ -1,7 +1,6 @@
 import React, { useState, useEffect } from 'react'
 import firebase from '../../firebase'
 import { useParams } from 'react-router-dom'
-import Subscribe from '../Subscribe'
 import Navbarpages from '../Navbar/Navbarpages'
 import ItemsCarousel from 'react-items-carousel'
 import { Card } from 'react-bootstrap'
@@ -22,21 +21,18 @@ import {
 const Exploreevblog = () => {
   const [activeItemIndex, setActiveItemIndex] = useState(0)
   const [exploreevblog, setExploreevblog] = useState([])
-  const [loading, setLoading] = useState(false)
 
   const url = String(window.location)
 
   const ref = firebase.firestore().collection('exploreev')
 
   function getExploreevblog() {
-    setLoading(true)
     ref.onSnapshot((querySnapshot) => {
       const items = []
       querySnapshot.forEach((doc) => {
         items.push(doc.data())
       })
       setExploreevblog(items)
-      setLoading(false)
     })
   }
 
@@ -66,13 +62,6 @@ const Exploreevblog = () => {
 
   const { id } = useParams()
 
-  if (loading) {
-    return (
-      <div className='spinner-border text-primary ' role='status'>
-        <span className='sr-only'>Loading...</span>
-      </div>
-    )
-  }
   return (
     <>
       <Navbarpages />
@@ -81,7 +70,7 @@ const Exploreevblog = () => {
           .filter((item) => item.id === id)
           .map((item) => {
             return (
-              <div key={item.id}>
+              <div className='blogContent' key={item.id}>
                 <div className='blogpage'>
                   <h1 className=''>{item.title}</h1>
                   <span></span>
@@ -92,7 +81,8 @@ const Exploreevblog = () => {
                   Also, don't forget to share this article on WhatsApp, LinkedIn
                   and Twitter. Until then...
                 </p>
-                <div className='social-icons'>
+                {/* ------------SHARE BUTTONS--------------- */}
+                <div className='share-icons'>
                   <FacebookShareButton
                     url={url}
                     title={item.title}
@@ -129,7 +119,6 @@ const Exploreevblog = () => {
             )
           })}
       </div>
-      <Subscribe />
       {/* __________________CARDS SECTION_____________________ */}
       <div
         className='container'
@@ -146,7 +135,7 @@ const Exploreevblog = () => {
           requestToChangeActive={setActiveItemIndex}
           activeItemIndex={activeItemIndex}
           numberOfCards={numbofitem}
-          gutter={50}
+          gutter={20}
           leftChevron={<IoArrowBackCircleSharp className='arrows' />}
           rightChevron={<IoArrowForwardCircle className='arrows' />}
           outsideChevron
@@ -156,7 +145,10 @@ const Exploreevblog = () => {
           {exploreevblog.map((item) => {
             return (
               <div key={item.id}>
-                <Card className='cards' style={{ width: `0 ${width}px` }}>
+                <Card
+                  className='cards exploreevblogcards'
+                  style={{ width: `0 ${width}px` }}
+                >
                   <Card.Img variant='top' src={item.image} />
                   <Card.Body>
                     <Card.Title>

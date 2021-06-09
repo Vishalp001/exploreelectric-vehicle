@@ -1,0 +1,157 @@
+.header {
+  -webkit-animation: scale-in-center 0.5s cubic-bezier(0.25, 0.46, 0.45, 0.94)
+    1s both;
+  animation: scale-in-center 0.5s cubic-bezier(0.25, 0.46, 0.45, 0.94) 1s both;
+}
+@-webkit-keyframes scale-in-center {
+  0% {
+    -webkit-transform: scale(0);
+    transform: scale(0);
+    opacity: 1;
+  }
+  100% {
+    -webkit-transform: scale(1);
+    transform: scale(1);
+    opacity: 1;
+  }
+}
+@keyframes scale-in-center {
+  0% {
+    -webkit-transform: scale(0);
+    transform: scale(0);
+    opacity: 1;
+  }
+  100% {
+    -webkit-transform: scale(1);
+    transform: scale(1);
+    opacity: 1;
+  }
+}
+
+.page-header {
+  margin-top: 50px;
+  text-align: center;
+}
+.page-header h1 {
+  font-family: 'Roboto', sans-serif;
+  color: #3c484e;
+  font-size: 38px;
+  font-weight: 700;
+  line-height: 44px;
+  letter-spacing: 3px;
+}
+.page-header p {
+  font-family: 'Roboto', sans-serif;
+  color: #3c484e;
+  line-height: 25px;
+  font-size: 22px;
+  font-style: oblique;
+  padding: 5px 0;
+}
+/* -----------JUSTIN PAGE------------ */
+.justinpage {
+  margin-top: 50px;
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+}
+.justinpage .card {
+  justify-content: center;
+  width: 350px;
+  margin: 25px auto;
+  transition: 0.2s ease-in-out;
+  border-radius: 15px;
+}
+.justinpage .card img {
+  border-radius: 15px;
+}
+.justinpage .card:hover {
+  box-shadow: -1px 1px 7px 0px rgba(0, 0, 0, 0.75);
+  -webkit-box-shadow: -1px 1px 7px 0px rgba(0, 0, 0, 0.75);
+  -moz-box-shadow: -1px 1px 7px 0px rgba(0, 0, 0, 0.75);
+}
+
+/* ------------Exploreev Page------------ */
+.exploreevpage {
+  margin-top: 50px;
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+}
+.exploreevpage .card {
+  justify-content: center;
+  width: 350px;
+  margin: 25px auto;
+  transition: 0.2s ease-in-out;
+  border-radius: 15px;
+}
+.exploreevpage .card img {
+  border-radius: 15px 15px 0 0;
+}
+.exploreevpage .card h5 {
+  font-family: 'Roboto', sans-serif;
+  font-weight: 700;
+  font-size: 20px;
+  color: #15171a;
+  line-height: 23px;
+}
+.exploreevpage .card:hover {
+  box-shadow: -1px 1px 7px 0px rgba(0, 0, 0, 0.75);
+  -webkit-box-shadow: -1px 1px 7px 0px rgba(0, 0, 0, 0.75);
+  -moz-box-shadow: -1px 1px 7px 0px rgba(0, 0, 0, 0.75);
+}
+
+/* --------------Trending Page-------------- */
+.trendingpage {
+  margin-top: 50px;
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+}
+.trendingpage .card {
+  justify-content: center;
+  width: 350px;
+  margin: 25px auto;
+  transition: 0.2s ease-in-out;
+  border-radius: 15px;
+}
+.trendingpage .card img {
+  border-radius: 15px 15px 0 0;
+}
+.trendingpage .card h5 {
+  font-family: 'Roboto', sans-serif;
+  font-weight: 700;
+  font-size: 20px;
+  color: #15171a;
+  line-height: 23px;
+}
+.trendingpage .card p {
+  font-family: Georgia, 'Times New Roman', Times, serif;
+  font-weight: 400;
+  font-size: 15px;
+  line-height: 24px;
+  color: #15171a;
+}
+.trendingpage .card:hover {
+  box-shadow: -1px 1px 7px 0px rgba(0, 0, 0, 0.75);
+  -webkit-box-shadow: -1px 1px 7px 0px rgba(0, 0, 0, 0.75);
+  -moz-box-shadow: -1px 1px 7px 0px rgba(0, 0, 0, 0.75);
+}
+
+/* -------------Videos Page----------- */
+.videopage {
+  margin-top: 50px;
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+}
+.videopage div {
+  margin: 10px;
+  border-radius: 5px;
+}
+.videopage div iframe {
+  box-shadow: -1px 1px 7px 0px rgba(0, 0, 0, 0.75);
+  -webkit-box-shadow: -1px 1px 7px 0px rgba(0, 0, 0, 0.75);
+  -moz-box-shadow: -1px 1px 7px 0px rgba(0, 0, 0, 0.75);
+  border-radius: 5px;
+}

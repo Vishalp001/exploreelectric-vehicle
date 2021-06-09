@@ -1,10 +1,9 @@
 import React, { useState, useEffect } from 'react'
 import firebase from '../../firebase'
-
 import { Card } from 'react-bootstrap'
-import Subscribe from '../Subscribe'
 import { Link } from 'react-router-dom'
 import Navbarpages from '../Navbar/Navbarpages'
+
 const Justinpage = () => {
   const [exploreevpage, setexploreevpage] = useState([])
   const [loading, setLoading] = useState(false)
@@ -42,8 +41,8 @@ const Justinpage = () => {
           <div className='page-header'>
             <h1>Explore EV</h1>
             <p>
-              5 min articles focused on the Indian capital market ecosystem.
-              We'll have a new story for you each week.
+              5 min articles focused on the <br /> Indian capital market
+              ecosystem. We'll have a new story for you each week.
             </p>
           </div>
           <div className='exploreevpage'>
@@ -65,7 +64,6 @@ const Justinpage = () => {
             })}
           </div>
         </div>
-        <Subscribe />
       </div>
     </>
   )

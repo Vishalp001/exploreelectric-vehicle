@@ -1,13 +1,10 @@
 import React from 'react'
 import '../styles/Navbar.css'
-import { Navbar, Nav, Button } from 'react-bootstrap'
+import { Navbar, Nav } from 'react-bootstrap'
 import logo from '../../images/logo.png'
 import { LinkContainer } from 'react-router-bootstrap'
 
 const Navbarjs = () => {
-  const subs = () => {
-    window.location.href = '#subscribe'
-  }
   return (
     <Navbar className='container' expand='lg'>
       <LinkContainer to='/'>
