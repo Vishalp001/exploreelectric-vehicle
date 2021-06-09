@@ -92,11 +92,7 @@ const Trendingblog = () => {
                   and Twitter. Until then...
                 </p>
                 <div className='share-icons'>
-                  <FacebookShareButton
-                    url={url}
-                    title={item.title}
-                    shareImage={item.image}
-                  >
+                  <FacebookShareButton url={url} quote={item.title}>
                     <FacebookIcon size={42} round={true} />
                   </FacebookShareButton>
 
@@ -116,11 +112,7 @@ const Trendingblog = () => {
                     <WhatsappIcon size={42} round={true} />
                   </WhatsappShareButton>
 
-                  <TwitterShareButton
-                    url={url}
-                    title={item.title}
-                    shareImage={item.image}
-                  >
+                  <TwitterShareButton url={url} title={item.title}>
                     <TwitterIcon size={42} round={true} />
                   </TwitterShareButton>
                 </div>

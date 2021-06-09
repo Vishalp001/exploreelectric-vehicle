@@ -21,18 +21,37 @@ const Footer = () => {
           <div className='social-icons'>
             <h3>Connect with us </h3>
             <div>
-              <img src={fb} alt='' />
-              <img src={instagram} alt='' />
-              <img src={twitter} alt='' />
-              <img src={youtube} alt='' />
-              <img src={linkedin} alt='' />
+              <a href='https://m.facebook.com/106835948250906/' target='_blank'>
+                <img src={fb} alt='' />
+              </a>
+              <a
+                href='https://www.instagram.com/xplor.ev?r=nametag'
+                target='_blank'
+              >
+                <img src={instagram} alt='' />
+              </a>
+              <a href='https://mobile.twitter.com/evxplor' target='_blank'>
+                <img src={twitter} alt='' />
+              </a>
+              <a
+                href='https://youtube.com/channel/UC6IMZ3UZs4Tcd8DCTZZ4wCA'
+                target='_blank'
+              >
+                <img src={youtube} alt='' />
+              </a>
+              <a
+                href='https://www.linkedin.com/company/xplorev'
+                target='_blank'
+              >
+                <img src={linkedin} alt='' />
+              </a>
             </div>
           </div>
 
           <div className='footer-support'>
             <h3>Help And Support</h3>
             <p>
-              Contact Us: <a href=''> aniket@xplorev.com </a>
+              Contact Us: <a href=''>contact@xplorev.com </a>
             </p>
             <ul>
               <li>

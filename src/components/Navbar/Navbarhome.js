@@ -11,7 +11,7 @@ const Navbarjs = () => {
         <Navbar.Brand>
           <img
             src={logo}
-            width='200'
+            width='180'
             height='70'
             className='d-inline-block align-top'
             alt='logo'

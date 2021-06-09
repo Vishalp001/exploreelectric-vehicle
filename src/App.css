@@ -45,11 +45,16 @@ iframe {
   -moz-box-shadow: -1px 1px 7px 0px rgba(0, 0, 0, 0.75);
   border-radius: 5px;
 }
+.exploreevPage h5,
+.trendingPage h5 {
+  height: 54px;
+}
 
 .exploreevPage,
 .trendingPage {
   height: 410px;
 }
+
 .trendingblogcards,
 .exploreevblogcards {
   height: 470px;
@@ -384,7 +389,7 @@ footer {
   flex-direction: column;
 }
 .social-icons * {
-  margin: 10px;
+  margin: 10px 5px;
 }
 .social-icons h3 {
   text-transform: normal;
