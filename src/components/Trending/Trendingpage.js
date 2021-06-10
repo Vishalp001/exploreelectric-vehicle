@@ -28,10 +28,10 @@ const Justinpage = () => {
       <div className='header'>
         <div className='container'>
           <div className='page-header'>
-            <h1>All Trending Topics</h1>
+            <h1>Trending News</h1>
             <p>
-              5 min articles focused on the <br /> Indian capital market
-              ecosystem. We'll have a new story for you each week.
+              Catch here the simplified trending news on <br />
+              Electric Vehicles that have caught people attension
             </p>
           </div>
           <div className='trendingpage'>

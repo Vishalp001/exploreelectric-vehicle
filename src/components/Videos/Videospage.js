@@ -31,8 +31,8 @@ const Videospage = () => {
           <div className='page-header'>
             <h1>Our Videos</h1>
             <p>
-              5 min articles focused on the <br /> Indian capital market
-              ecosystem. We'll have a new story for you each week.
+              Curated videos on <br /> Electric Vehicles for your better
+              understandings.
             </p>
           </div>
           <div className='videopage'>

@@ -29,10 +29,10 @@ const Justinpage = () => {
       <div className='header'>
         <div className='container'>
           <div className='page-header'>
-            <h1>Justin Cards</h1>
+            <h1>Just In</h1>
             <p>
-              5 min articles focused on the <br /> Indian capital market
-              ecosystem. We'll have a new story for you each week.
+              Your 30-sec quick digest on <br /> Electric Vehicles. Covering
+              Start-ups, Automakers, and Technologies.
             </p>
           </div>
           <div className='justinpage'>

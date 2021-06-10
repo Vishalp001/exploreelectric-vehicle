@@ -39,10 +39,10 @@ const Justinpage = () => {
       <div className='header'>
         <div className='header container'>
           <div className='page-header'>
-            <h1>Explore EV</h1>
+            <h1>Know EV</h1>
             <p>
-              5 min articles focused on the <br /> Indian capital market
-              ecosystem. We'll have a new story for you each week.
+              Your 5 min knowledge booser on Electric Vehicles. Enjoy Learning
+              :)
             </p>
           </div>
           <div className='exploreevpage'>

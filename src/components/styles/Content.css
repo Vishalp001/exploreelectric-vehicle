@@ -36,17 +36,17 @@
   font-family: 'Roboto', sans-serif;
   color: #3c484e;
   font-size: 38px;
-  font-weight: 700;
+  font-weight: 650;
   line-height: 44px;
-  letter-spacing: 3px;
+  letter-spacing: 2px;
 }
 .page-header p {
-  font-family: 'Roboto', sans-serif;
+  /* font-family: 'Roboto', sans-serif; */
   color: #3c484e;
   line-height: 25px;
   font-size: 22px;
-  font-style: oblique;
   padding: 5px 0;
+  font-weight: lighter;
 }
 /* -----------JUSTIN PAGE------------ */
 .justinpage {
