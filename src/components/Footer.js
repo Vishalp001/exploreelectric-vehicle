@@ -1,11 +1,31 @@
-import React from 'react'
+import React, { useState } from 'react'
 import instagram from '../images/instagram.png'
 import youtube from '../images/youtube.png'
 import linkedin from '../images/linkedin.png'
 import twitter from '../images/twitter.png'
 import fb from '../images/fb.png'
+import { db } from '../firebase'
+import 'firebase/firestore'
 
 const Footer = () => {
+  const [email, setEmail] = useState('')
+
+  const handelSubmit = (e) => {
+    e.preventDefault()
+
+    db.collection('emails')
+      .add({
+        email: email,
+      })
+      .then(() => {
+        alert('Thank You Subscribing 👍')
+      })
+      .catch((error) => {
+        alert(error.message)
+      })
+    setEmail('')
+  }
+
   return (
     <>
       <footer>
@@ -14,8 +34,15 @@ const Footer = () => {
           <div className='footer-subs'>
             <h3>Newsletter</h3>
             <p>Don't miss out, Sign Up for the weekly newsletter on EVs.</p>
-            <input type='text' placeholder='Enter your email address' />
-            <button>Subscribe</button>
+            <form onSubmit={handelSubmit}>
+              <input
+                type='email'
+                value={email}
+                placeholder='Enter your email address'
+                onChange={(e) => setEmail(e.target.value)}
+              />
+              <button type='submit'>Subscribe</button>
+            </form>
           </div>
 
           <div className='social-icons'>

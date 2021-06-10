@@ -32,7 +32,7 @@ const Navbarpages = () => {
             <Nav.Link className='nav-element'>Videos</Nav.Link>
           </LinkContainer>
           <LinkContainer to='/exploreevpage'>
-            <Nav.Link className='nav-element'>Explore EV</Nav.Link>
+            <Nav.Link className='nav-element'>Know EV</Nav.Link>
           </LinkContainer>
         </Nav>
       </Navbar.Collapse>

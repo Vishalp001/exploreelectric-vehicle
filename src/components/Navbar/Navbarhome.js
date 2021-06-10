@@ -32,7 +32,7 @@ const Navbarjs = () => {
             Videos
           </Nav.Link>
           <Nav.Link href='#exploreev' className='nav-element'>
-            Explore EV
+            Know EV
           </Nav.Link>
         </Nav>
       </Navbar.Collapse>

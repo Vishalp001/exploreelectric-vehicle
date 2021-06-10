@@ -1,9 +1,30 @@
-import React from 'react'
+import React, { useState } from 'react'
 import '../components/styles/header.css'
+import { db } from '../firebase'
+import 'firebase/firestore'
+
 import svg from '../images/car.svg'
-// import svg from '../images/1.svg'
+import svg1 from '../images/1.svg'
+import svg2 from '../images/3.svg'
 
 const Header = () => {
+  const [email, setEmail] = useState('')
+
+  const handelSubmit = (e) => {
+    e.preventDefault()
+
+    db.collection('emails')
+      .add({
+        email: email,
+      })
+      .then(() => {
+        alert('Thank You Subscribing 👍')
+      })
+      .catch((error) => {
+        alert(error.message)
+      })
+    setEmail('')
+  }
   return (
     <div className='banner container'>
       <div className='col '>
@@ -15,17 +36,15 @@ const Header = () => {
           news and information on Electric Vehicles.
         </p>
         {/* --------------FORM---------------- */}
-        <form id='subscribe'>
+        <form id='subscribe' onSubmit={handelSubmit}>
           <div className='header-sub'>
             <input
-              id='email'
+              value={email}
               type='email'
-              name='email'
-              autoComplete='off'
               placeholder='Enter your email address'
+              onChange={(e) => setEmail(e.target.value)}
             />
-
-            <button>Subscribe</button>
+            <button type='submit'>Subscribe</button>
           </div>
         </form>
       </div>

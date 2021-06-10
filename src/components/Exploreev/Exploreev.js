@@ -57,7 +57,7 @@ export default () => {
     <div id='exploreev' className='container'>
       <div className='heading-section'>
         <p className='cardHeading'>
-          <BsSearch /> Explore EV
+          <BsSearch /> Know EV
         </p>
         <Link to='/exploreevpage'>View All</Link>
       </div>
