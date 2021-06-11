@@ -47,7 +47,7 @@ export default () => {
   if ((isMobileMid, isMobileSmall, isMobileFloor)) {
     numbofitem = 1
     chevronWidth = 30
-    width = 250
+    width = 320
   } else if ((isTabletFloor, isTabletMid, isTabletCeil)) {
     numbofitem = 2
     chevronWidth = 30
@@ -63,7 +63,7 @@ export default () => {
         <Link to='/videospage'>Show More</Link>
       </div>
       {/* ---------VIDEO CARAUSAL-------------- */}
-      <div style={{ padding: `0 10px` }}>
+      <div style={{ margin: `0 10px` }}>
         <ItemsCarousel
           activePosition='right'
           infiniteLoop={true}
