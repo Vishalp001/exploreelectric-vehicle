@@ -1,6 +1,7 @@
 import React, { useState, useEffect } from 'react'
-import firebase from '../../firebase'
 import ItemsCarousel from 'react-items-carousel'
+
+import firebase from '../../firebase'
 import { IoArrowForwardCircle, IoArrowBackCircleSharp } from 'react-icons/io5'
 import { useMediaQuery } from 'react-responsive'
 import { IoVideocamSharp } from 'react-icons/io5'
@@ -9,6 +10,9 @@ import { Link } from 'react-router-dom'
 export default () => {
   const [activeItemIndex, setActiveItemIndex] = useState(0)
   const [videos, setvideos] = useState([])
+  let chevronWidth = 40
+  let numbofitem = 3
+  let width = 350
 
   const ref = firebase.firestore().collection('videos')
 
@@ -26,11 +30,6 @@ export default () => {
     getVideos()
   }, [])
 
-  let chevronWidth = 40
-  let numbofitem = 3
-  let width = 350
-  let gutter = 25
-
   const isMobileSmall = useMediaQuery({ query: '(max-width: 325px)' })
   const isMobileMid = useMediaQuery({ query: '(max-width: 375px)' })
   const isMobileFloor = useMediaQuery({ query: '(max-width: 425px)' })
@@ -47,64 +46,53 @@ export default () => {
 
   if ((isMobileMid, isMobileSmall, isMobileFloor)) {
     numbofitem = 1
-    chevronWidth = 25
-    width = 350
-    gutter = 0
+    chevronWidth = 30
+    width = 320
   } else if ((isTabletFloor, isTabletMid, isTabletCeil)) {
     numbofitem = 2
-    chevronWidth = 25
-    width = 350
+    chevronWidth = 30
+    width = 320
   }
+
   return (
-    <div
-      id='videos'
-      className='container'
-      style={{ padding: `0 ${chevronWidth}px` }}
-    >
+    <div id='videos' className='container'>
       <div className='heading-section'>
         <p className='cardHeading'>
           <IoVideocamSharp /> Videos
         </p>
         <Link to='/videospage'>Show More</Link>
       </div>
-      <ItemsCarousel
-        infiniteLoop={true}
-        requestToChangeActive={setActiveItemIndex}
-        activeItemIndex={activeItemIndex}
-        numberOfCards={numbofitem}
-        gutter={gutter}
-        leftChevron={
-          <IoArrowBackCircleSharp
-            style={{ padding: '0', margin: '0' }}
-            className='arrows'
-          />
-        }
-        rightChevron={
-          <IoArrowForwardCircle
-            style={{ padding: '0', margin: '0' }}
-            className='arrows'
-          />
-        }
-        outsideChevron
-        chevronWidth={chevronWidth}
-        disableSwipe={false}
-      >
-        {videos.map((item) => {
-          return (
-            <div key={item.id} style={{ width: `0 ${width}px` }}>
-              <iframe
-                width={width}
-                height='280'
-                src={item.url}
-                title='YouTube video player'
-                frameBorder='0'
-                allow='accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture'
-                allowFullScreen
-              ></iframe>
-            </div>
-          )
-        })}
-      </ItemsCarousel>
+      {/* ---------VIDEO CARAUSAL-------------- */}
+      <div style={{ padding: `0 10px` }}>
+        <ItemsCarousel
+          activePosition='right'
+          infiniteLoop={true}
+          requestToChangeActive={setActiveItemIndex}
+          activeItemIndex={activeItemIndex}
+          numberOfCards={numbofitem}
+          gutter={50}
+          leftChevron={<IoArrowBackCircleSharp className='arrows' />}
+          rightChevron={<IoArrowForwardCircle className='arrows' />}
+          outsideChevron={true}
+          chevronWidth={chevronWidth}
+        >
+          {videos.map((item) => {
+            return (
+              <div key={item.id}>
+                <iframe
+                  width={width}
+                  height='280'
+                  src={item.url}
+                  title='YouTube video player'
+                  frameBorder='0'
+                  allow='accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture'
+                  allowFullScreen
+                ></iframe>
+              </div>
+            )
+          })}
+        </ItemsCarousel>
+      </div>
     </div>
   )
 }

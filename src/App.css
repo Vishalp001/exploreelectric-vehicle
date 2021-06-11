@@ -108,14 +108,16 @@ iframe {
 
 .cards h5 {
   font-family: 'Roboto', sans-serif;
-  font-weight: 550;
+  font-weight: 600;
+  font-size: 20px;
+  color: #1a2a30;
 }
 
 .cards p {
-  font-weight: 400;
+  font-family: sans-serif;
   line-height: 29px;
-  color: #1a2a30;
-  font-size: 19px;
+  color: #15171a;
+  font-size: 17px;
 }
 
 /* -----------ARROWS-------------- */
