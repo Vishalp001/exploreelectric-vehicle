@@ -29,7 +29,7 @@ const Videospage = () => {
       <div className='header'>
         <div className=' container'>
           <div className='page-header'>
-            <h1>Our Videos</h1>
+            <h1>Videos</h1>
             <p>
               Curated videos on <br /> Electric Vehicles for your better
               understandings.

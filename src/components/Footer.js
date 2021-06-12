@@ -18,7 +18,7 @@ const Footer = () => {
         email: email,
       })
       .then(() => {
-        alert('Thank You Subscribing 👍')
+        alert('Thank You for Subscribing 👍')
       })
       .catch((error) => {
         alert(error.message)
