@@ -20,7 +20,7 @@ import {
 const Justin = () => {
   const [justin, setJustin] = useState([])
   const [activeItemIndex, setActiveItemIndex] = useState(0)
-  const url = String(window.location)
+  const url = 'https://xplorev.com/justinpage'
 
   const ref = firebase.firestore().collection('justinimage')
 
@@ -92,17 +92,11 @@ const Justin = () => {
         {justin.map((item) => {
           return (
             <div key={item.id}>
-              <Card className='cards' style={{ width: `0 ${width}px` }}>
-                <Card.Img
-                  // style={{ borderRadius: '15px' }}
-                  variant='top'
-                  src={item.image}
-                  alt='image'
-                />
-                <div className='card-footer'>
+              <Card className='cards'>
+                <Card.Img variant='top' src={item.image} alt='image' />
+                <div className=''>
                   <small>
                     <div className='justin-share-btn'>
-                      <span style={{ fontSize: '18px' }}> Share this on:</span>
                       <FacebookShareButton url={url} shareImage={item.image}>
                         <FacebookIcon size={25} round={true} />
                       </FacebookShareButton>

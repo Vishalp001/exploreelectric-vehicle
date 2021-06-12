@@ -64,7 +64,9 @@ iframe {
     height: 420px;
   }
 }
-
+.justin-share-btn {
+  text-align: center;
+}
 .trendingblogcards,
 .exploreevblogcards {
   height: 470px;

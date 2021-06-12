@@ -4,8 +4,6 @@ import { db } from '../firebase'
 import 'firebase/firestore'
 
 import svg from '../images/car.svg'
-// import svg1 from '../images/1.svg'
-// import svg2 from '../images/3.svg'
 
 const Header = () => {
   const [email, setEmail] = useState('')

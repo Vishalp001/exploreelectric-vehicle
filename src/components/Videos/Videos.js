@@ -12,7 +12,7 @@ export default () => {
   const [videos, setvideos] = useState([])
   let chevronWidth = 40
   let numbofitem = 3
-  let width = 350
+  let width = 400
 
   const ref = firebase.firestore().collection('videos')
 
@@ -47,11 +47,11 @@ export default () => {
   if ((isMobileMid, isMobileSmall, isMobileFloor)) {
     numbofitem = 1
     chevronWidth = 30
-    width = 320
+    width = 330
   } else if ((isTabletFloor, isTabletMid, isTabletCeil)) {
     numbofitem = 2
     chevronWidth = 30
-    width = 320
+    width = 350
   }
 
   return (
