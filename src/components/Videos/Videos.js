@@ -12,7 +12,7 @@ export default () => {
   const [videos, setvideos] = useState([])
   let chevronWidth = 40
   let numbofitem = 3
-  let width = 400
+  let width = 360
 
   const ref = firebase.firestore().collection('videos')
 
