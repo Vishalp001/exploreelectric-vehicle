@@ -48,8 +48,8 @@ export default () => {
   if ((isMobileMid, isMobileSmall, isMobileFloor)) {
     numbofitem = 1
     chevronWidth = 25
-    gutter = 50
-    width = 300
+    gutter = 20
+    width = 330
   } else if ((isTabletFloor, isTabletMid, isTabletCeil)) {
     numbofitem = 2
     chevronWidth = 25
