@@ -63,7 +63,7 @@
   border-radius: 15px;
 }
 .justinpage .card img {
-  border-radius: 15px;
+  border-radius: 15px 15px 0 0;
 }
 .justinpage .card:hover {
   box-shadow: -1px 1px 7px 0px rgba(0, 0, 0, 0.75);
