@@ -39,12 +39,9 @@
 .cards img {
   border-radius: 15px 15px 0 0;
 }
-iframe {
-  box-shadow: -1px 1px 7px 0px rgba(0, 0, 0, 0.75);
-  -webkit-box-shadow: -1px 1px 7px 0px rgba(0, 0, 0, 0.75);
-  -moz-box-shadow: -1px 1px 7px 0px rgba(0, 0, 0, 0.75);
-  border-radius: 5px;
-}
+
+/* -----------------video-cards-------------- */
+
 .exploreevPage h5,
 .trendingPage h5 {
   height: 54px;
@@ -151,7 +148,7 @@ iframe {
   margin-top: 50px;
   display: flex;
   justify-content: space-between;
-  align-items: center;
+  align-items: baseline;
 }
 .heading-section p {
   font-size: 25px;

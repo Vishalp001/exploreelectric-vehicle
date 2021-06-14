@@ -3,6 +3,8 @@ import '../styles/Content.css'
 import firebase from '../../firebase'
 import { Card } from 'react-bootstrap'
 import Navbarpages from '../Navbar/Navbarpages'
+import ReactPaginate from 'react-paginate'
+
 import {
   FacebookIcon,
   FacebookShareButton,
@@ -16,6 +18,13 @@ import {
 
 const Justinpage = () => {
   const [justinpage, setJustinpage] = useState([])
+  // const [pageNumber, setPageNumber] = useState(0)
+
+  // const usersPerpage = 9
+  // const pagesVisited = pageNumber * usersPerpage
+
+  // const displayUsers =
+
   const url = 'https://xplorev.com/justinpage'
 
   const ref = firebase.firestore().collection('justinimage')
@@ -42,8 +51,8 @@ const Justinpage = () => {
           <div className='page-header'>
             <h1>Just In</h1>
             <p>
-              Your 30-sec quick digest on <br /> Electric Vehicles. Covering
-              Start-ups, Automakers, and Technologies.
+              Your 30-sec quick digest on Electric Vehicles. Covering latest
+              technologies, <br /> Auto Industries, Govt Policies and Start-ups.
             </p>
           </div>
           <div className='justinpage'>

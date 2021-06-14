@@ -142,8 +142,15 @@
   margin-top: 50px;
   display: flex;
   flex-wrap: wrap;
-  justify-content: center;
+  justify-content: space-between;
 }
+
+@media only screen and (max-width: 720px) {
+  .videopage {
+    justify-content: center;
+  }
+}
+
 .videopage div {
   margin: 10px;
   border-radius: 5px;
