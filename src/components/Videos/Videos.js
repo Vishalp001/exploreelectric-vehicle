@@ -29,9 +29,9 @@ export default () => {
         <p className='cardHeading'>
           <IoVideocamSharp /> Videos
         </p>
-        <Link to='/videospage'>Show More</Link>
+        <Link to='/videospage'>View All</Link>
       </div>
-      <div className='videopage'>
+      <div className='videopage' style={{ marginTop: '0px' }}>
         {videos.slice(0, 3).map((item) => {
           return (
             <div key={item.id}>

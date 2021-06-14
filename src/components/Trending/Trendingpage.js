@@ -3,8 +3,12 @@ import firebase from '../../firebase'
 import { Card } from 'react-bootstrap'
 import { Link } from 'react-router-dom'
 import Navbarpages from '../Navbar/Navbarpages'
-const Justinpage = () => {
+import ReactPaginate from 'react-paginate'
+import { AiOutlineArrowLeft, AiOutlineArrowRight } from 'react-icons/ai'
+
+const TrendingPage = () => {
   const [trendingpage, setTrendingpage] = useState([])
+  const [pageNumber, setPageNumber] = useState(0)
 
   const ref = firebase.firestore().collection('trending')
 
@@ -22,6 +26,34 @@ const Justinpage = () => {
     getTrendingpage()
   }, [])
 
+  const usersPerpage = 9
+  const pagesVisited = pageNumber * usersPerpage
+  const displayUsers = trendingpage
+    .slice(pagesVisited, pagesVisited + usersPerpage)
+    .map((item) => {
+      return (
+        <Card key={item.id} style={{ width: '20rem' }}>
+          <Card.Img variant='top' src={item.image} />
+          <Card.Body>
+            <Card.Title>
+              <h5> {item.title} </h5>
+            </Card.Title>
+            <Card.Text>
+              {`${item.text.substring(0, 150)}...`}
+              <Link to={`/trendingblog/${item.id}`}>Read More</Link>
+            </Card.Text>
+          </Card.Body>
+        </Card>
+      )
+    })
+
+  const pageCount = Math.ceil(trendingpage.length / usersPerpage)
+
+  const changePage = ({ selected }) => {
+    setPageNumber(selected)
+    window.scrollTo(0, 0)
+  }
+
   return (
     <>
       <Navbarpages />
@@ -34,28 +66,22 @@ const Justinpage = () => {
               Electric Vehicles that have caught people attension
             </p>
           </div>
-          <div className='trendingpage'>
-            {trendingpage.map((item) => {
-              return (
-                <Card key={item.id} style={{ width: '20rem' }}>
-                  <Card.Img variant='top' src={item.image} />
-                  <Card.Body>
-                    <Card.Title>
-                      <h5> {item.title} </h5>
-                    </Card.Title>
-                    <Card.Text>
-                      {`${item.text.substring(0, 150)}...`}
-                      <Link to={`/trendingblog/${item.id}`}>Read More</Link>
-                    </Card.Text>
-                  </Card.Body>
-                </Card>
-              )
-            })}
-          </div>
+          <div className='trendingpage'>{displayUsers}</div>
         </div>
+        {/* <ReactPaginate
+          previousLabel={<AiOutlineArrowLeft />}
+          nextLabel={<AiOutlineArrowRight />}
+          pageCount={pageCount}
+          onPageChange={changePage}
+          containerClassName={'paginationBttns'}
+          previousLinkClassName={'previousBttn'}
+          nextLinkClassName={'nextBttn'}
+          disabledClassName={'paginationDIsabled'}
+          activeClassName={'paginationActive'}
+        /> */}
       </div>
     </>
   )
 }
 
-export default Justinpage
+export default TrendingPage

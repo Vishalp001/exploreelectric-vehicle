@@ -94,13 +94,7 @@ const Footer = () => {
           </div>
         </div>
       </footer>
-      <p className='credit'>
-        © 2021 · Created by
-        <a href='https://vishalp-portfolio.netlify.app/' target='_blank'>
-          Vishal
-        </a>
-        · Made with ❤️
-      </p>
+      <p className='credit'>© 2021 • XplorEV</p>
     </>
   )
 }

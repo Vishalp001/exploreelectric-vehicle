@@ -3,22 +3,22 @@ import firebase from '../../firebase'
 import { Card } from 'react-bootstrap'
 import { Link } from 'react-router-dom'
 import Navbarpages from '../Navbar/Navbarpages'
+import ReactPaginate from 'react-paginate'
+import { AiOutlineArrowLeft, AiOutlineArrowRight } from 'react-icons/ai'
 
 const Justinpage = () => {
   const [exploreevpage, setexploreevpage] = useState([])
-  const [loading, setLoading] = useState(false)
+  const [pageNumber, setPageNumber] = useState(0)
 
   const ref = firebase.firestore().collection('exploreev')
 
   function getexploreevpage() {
-    setLoading(true)
     ref.onSnapshot((querySnapshot) => {
       const items = []
       querySnapshot.forEach((doc) => {
         items.push(doc.data())
       })
       setexploreevpage(items)
-      setLoading(false)
     })
   }
 
@@ -26,13 +26,35 @@ const Justinpage = () => {
     getexploreevpage()
   }, [])
 
-  if (loading) {
-    return (
-      <div className='spinner-border text-primary' role='status'>
-        <span className='sr-only'>Loading...</span>
-      </div>
-    )
+  const usersPerpage = 9
+  const pagesVisited = pageNumber * usersPerpage
+
+  const displayUsers = exploreevpage
+    .slice(pagesVisited, pagesVisited + usersPerpage)
+    .map((item) => {
+      return (
+        <Card key={item.id} style={{ width: '20rem' }}>
+          <Card.Img variant='top' src={item.image} />
+          <Card.Body>
+            <Card.Title>
+              <h5> {item.title} </h5>
+            </Card.Title>
+            <Card.Text>
+              {`${item.text.substring(0, 150)}...`}
+              <Link to={`/exploreevblog/${item.id}`}>Read More</Link>
+            </Card.Text>
+          </Card.Body>
+        </Card>
+      )
+    })
+
+  const pageCount = Math.ceil(exploreevpage.length / usersPerpage)
+
+  const changePage = ({ selected }) => {
+    setPageNumber(selected)
+    window.scrollTo(0, 0)
   }
+
   return (
     <>
       <Navbarpages />
@@ -45,25 +67,19 @@ const Justinpage = () => {
               :)
             </p>
           </div>
-          <div className='exploreevpage'>
-            {exploreevpage.map((item) => {
-              return (
-                <Card key={item.id} style={{ width: '20rem' }}>
-                  <Card.Img variant='top' src={item.image} />
-                  <Card.Body>
-                    <Card.Title>
-                      <h5> {item.title} </h5>
-                    </Card.Title>
-                    <Card.Text>
-                      {`${item.text.substring(0, 150)}...`}
-                      <Link to={`/exploreevblog/${item.id}`}>Read More</Link>
-                    </Card.Text>
-                  </Card.Body>
-                </Card>
-              )
-            })}
-          </div>
+          <div className='exploreevpage'>{displayUsers}</div>
         </div>
+        {/* <ReactPaginate
+          previousLabel={<AiOutlineArrowLeft />}
+          nextLabel={<AiOutlineArrowRight />}
+          pageCount={pageCount}
+          onPageChange={changePage}
+          containerClassName={'paginationBttns'}
+          previousLinkClassName={'previousBttn'}
+          nextLinkClassName={'nextBttn'}
+          disabledClassName={'paginationDIsabled'}
+          activeClassName={'paginationActive'}
+        /> */}
       </div>
     </>
   )
