@@ -20,9 +20,8 @@ import {
 const Justinpage = () => {
   const [justinpage, setJustinpage] = useState([])
   const [pageNumber, setPageNumber] = useState(0)
-
   const url = 'https://xplorev.com/justinpage'
-
+  justinpage.reverse()
   const ref = firebase.firestore().collection('justinimage')
 
   function getJustinpage() {

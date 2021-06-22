@@ -21,6 +21,7 @@ const Justin = () => {
   const [justin, setJustin] = useState([])
   const [activeItemIndex, setActiveItemIndex] = useState(0)
   const url = 'https://xplorev.com/justinpage'
+  // justin.reverse()
 
   const ref = firebase.firestore().collection('justinimage')
 
@@ -40,7 +41,6 @@ const Justin = () => {
 
   let chevronWidth = 40
   let numbofitem = 3
-  let width = 100
 
   const isMobileSmall = useMediaQuery({ query: '(max-width: 325px)' })
   const isMobileMid = useMediaQuery({ query: '(max-width: 375px)' })
@@ -89,33 +89,36 @@ const Justin = () => {
         chevronWidth={chevronWidth}
         disableSwipe={false}
       >
-        {justin.map((item) => {
-          return (
-            <div key={item.id}>
-              <Card className='cards'>
-                <Card.Img variant='top' src={item.image} alt='image' />
-                <div className=''>
-                  <small>
-                    <div className='justin-share-btn'>
-                      <FacebookShareButton url={url} shareImage={item.image}>
-                        <FacebookIcon size={25} round={true} />
-                      </FacebookShareButton>
-                      <LinkedinShareButton url={url} shareImage={item.image}>
-                        <LinkedinIcon size={25} round={true} />
-                      </LinkedinShareButton>
-                      <WhatsappShareButton url={url} shareImage={item.image}>
-                        <WhatsappIcon size={25} round={true} />
-                      </WhatsappShareButton>
-                      <TwitterShareButton url={url} shareImage={item.image}>
-                        <TwitterIcon size={25} round={true} />
-                      </TwitterShareButton>
-                    </div>
-                  </small>
-                </div>
-              </Card>
-            </div>
-          )
-        })}
+        {justin
+          .slice(0)
+          .reverse()
+          .map((item) => {
+            return (
+              <div key={item.id}>
+                <Card className='cards'>
+                  <Card.Img variant='top' src={item.image} alt='image' />
+                  <div className=''>
+                    <small>
+                      <div className='justin-share-btn'>
+                        <FacebookShareButton url={url} shareImage={item.image}>
+                          <FacebookIcon size={25} round={true} />
+                        </FacebookShareButton>
+                        <LinkedinShareButton url={url} shareImage={item.image}>
+                          <LinkedinIcon size={25} round={true} />
+                        </LinkedinShareButton>
+                        <WhatsappShareButton url={url} shareImage={item.image}>
+                          <WhatsappIcon size={25} round={true} />
+                        </WhatsappShareButton>
+                        <TwitterShareButton url={url} shareImage={item.image}>
+                          <TwitterIcon size={25} round={true} />
+                        </TwitterShareButton>
+                      </div>
+                    </small>
+                  </div>
+                </Card>
+              </div>
+            )
+          })}
       </ItemsCarousel>
     </div>
   )

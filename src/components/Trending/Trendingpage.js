@@ -9,7 +9,7 @@ import { AiOutlineArrowLeft, AiOutlineArrowRight } from 'react-icons/ai'
 const TrendingPage = () => {
   const [trendingpage, setTrendingpage] = useState([])
   const [pageNumber, setPageNumber] = useState(0)
-
+  trendingpage.reverse()
   const ref = firebase.firestore().collection('trending')
 
   function getTrendingpage() {

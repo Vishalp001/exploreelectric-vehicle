@@ -142,27 +142,30 @@ const Exploreevblog = () => {
           chevronWidth={chevronWidth}
           disableSwipe={false}
         >
-          {exploreevblog.map((item) => {
-            return (
-              <div key={item.id}>
-                <Card
-                  className='cards exploreevblogcards'
-                  style={{ width: `0 ${width}px` }}
-                >
-                  <Card.Img variant='top' src={item.image} />
-                  <Card.Body>
-                    <Card.Title>
-                      <h5> {item.title} </h5>
-                    </Card.Title>
-                    <Card.Text>
-                      {`${item.text.substring(0, 150)}...`}
-                      <Link to={`/exploreevblog/${item.id}`}>Read More</Link>
-                    </Card.Text>
-                  </Card.Body>
-                </Card>
-              </div>
-            )
-          })}
+          {exploreevblog
+            .slice(0)
+            .reverse()
+            .map((item) => {
+              return (
+                <div key={item.id}>
+                  <Card
+                    className='cards exploreevblogcards'
+                    style={{ width: `0 ${width}px` }}
+                  >
+                    <Card.Img variant='top' src={item.image} />
+                    <Card.Body>
+                      <Card.Title>
+                        <h5> {item.title} </h5>
+                      </Card.Title>
+                      <Card.Text>
+                        {`${item.text.substring(0, 150)}...`}
+                        <Link to={`/exploreevblog/${item.id}`}>Read More</Link>
+                      </Card.Text>
+                    </Card.Body>
+                  </Card>
+                </div>
+              )
+            })}
         </ItemsCarousel>
       </div>
     </>

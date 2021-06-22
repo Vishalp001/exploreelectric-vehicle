@@ -11,7 +11,6 @@ import { Link } from 'react-router-dom'
 export default () => {
   const [activeItemIndex, setActiveItemIndex] = useState(0)
   const [trending, settrending] = useState([])
-
   const ref = firebase.firestore().collection('trending')
 
   function gettrending() {
@@ -75,27 +74,30 @@ export default () => {
         chevronWidth={chevronWidth}
         disableSwipe={false}
       >
-        {trending.map((item) => {
-          return (
-            <div key={item.id}>
-              <Card
-                className='cards trendingPage'
-                style={{ width: `0 ${width}px` }}
-              >
-                <Card.Img variant='top' src={item.image} />
-                <Card.Body>
-                  <Card.Title>
-                    <h5> {item.title} </h5>
-                  </Card.Title>
-                  <Card.Text>
-                    {`${item.text.substring(0, 75)}...`}
-                    <Link to={`/trendingblog/${item.id}`}>Read More</Link>
-                  </Card.Text>
-                </Card.Body>
-              </Card>
-            </div>
-          )
-        })}
+        {trending
+          .slice(0)
+          .reverse()
+          .map((item) => {
+            return (
+              <div key={item.id}>
+                <Card
+                  className='cards trendingPage'
+                  style={{ width: `0 ${width}px` }}
+                >
+                  <Card.Img variant='top' src={item.image} />
+                  <Card.Body>
+                    <Card.Title>
+                      <h5> {item.title} </h5>
+                    </Card.Title>
+                    <Card.Text>
+                      {`${item.text.substring(0, 75)}...`}
+                      <Link to={`/trendingblog/${item.id}`}>Read More</Link>
+                    </Card.Text>
+                  </Card.Body>
+                </Card>
+              </div>
+            )
+          })}
       </ItemsCarousel>
     </div>
   )

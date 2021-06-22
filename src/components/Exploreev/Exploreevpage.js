@@ -9,7 +9,7 @@ import { AiOutlineArrowLeft, AiOutlineArrowRight } from 'react-icons/ai'
 const Justinpage = () => {
   const [exploreevpage, setexploreevpage] = useState([])
   const [pageNumber, setPageNumber] = useState(0)
-
+  exploreevpage.reverse()
   const ref = firebase.firestore().collection('exploreev')
 
   function getexploreevpage() {

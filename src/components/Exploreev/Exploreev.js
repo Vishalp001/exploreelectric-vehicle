@@ -10,7 +10,6 @@ import { Link } from 'react-router-dom'
 export default () => {
   const [activeItemIndex, setActiveItemIndex] = useState(0)
   const [exploreev, setexploreev] = useState([])
-
   const ref = firebase.firestore().collection('exploreev')
 
   function getexploreev() {
@@ -73,27 +72,30 @@ export default () => {
         chevronWidth={chevronWidth}
         disableSwipe={false}
       >
-        {exploreev.map((item) => {
-          return (
-            <div key={item.id}>
-              <Card
-                className='cards exploreevPage'
-                style={{ width: `0 ${width}px` }}
-              >
-                <Card.Img variant='top' src={item.image} />
-                <Card.Body>
-                  <Card.Title>
-                    <h5> {item.title} </h5>
-                  </Card.Title>
-                  <Card.Text>
-                    {`${item.text.substring(0, 75)}...`}
-                    <Link to={`/exploreevblog/${item.id}`}>Read More</Link>
-                  </Card.Text>
-                </Card.Body>
-              </Card>
-            </div>
-          )
-        })}
+        {exploreev
+          .slice(0)
+          .reverse()
+          .map((item) => {
+            return (
+              <div key={item.id}>
+                <Card
+                  className='cards exploreevPage'
+                  style={{ width: `0 ${width}px` }}
+                >
+                  <Card.Img variant='top' src={item.image} />
+                  <Card.Body>
+                    <Card.Title>
+                      <h5> {item.title} </h5>
+                    </Card.Title>
+                    <Card.Text>
+                      {`${item.text.substring(0, 75)}...`}
+                      <Link to={`/exploreevblog/${item.id}`}>Read More</Link>
+                    </Card.Text>
+                  </Card.Body>
+                </Card>
+              </div>
+            )
+          })}
       </ItemsCarousel>
     </div>
   )
