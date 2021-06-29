@@ -127,12 +127,7 @@ const Exploreevblog = () => {
         className='container'
         style={{ marginTop: '50px', marginBottom: '50px' }}
       >
-        <h1
-          className=' font-italic'
-          style={{ fontSize: '22px', marginBottom: '10px' }}
-        >
-          <u> Explore EV Related Articles:</u>
-        </h1>
+        <h1 className='blogCardSection'>Explore EV Related Articles</h1>
         <ItemsCarousel
           infiniteLoop={true}
           requestToChangeActive={setActiveItemIndex}
