@@ -7,6 +7,7 @@ import { Card } from 'react-bootstrap'
 import { IoArrowForwardCircle, IoArrowBackCircleSharp } from 'react-icons/io5'
 import { useMediaQuery } from 'react-responsive'
 import { Link } from 'react-router-dom'
+import img from '../../images/trending.jpg'
 import {
   FacebookIcon,
   FacebookShareButton,
@@ -21,21 +22,18 @@ import {
 const Trendingblog = () => {
   const [activeItemIndex, setActiveItemIndex] = useState(0)
   const [trendingblog, setTrendingblog] = useState([])
-  const [loading, setLoading] = useState(false)
 
   const url = String(window.location)
 
   const ref = firebase.firestore().collection('trending')
 
   function getTrendingblog() {
-    setLoading(true)
     ref.onSnapshot((querySnapshot) => {
       const items = []
       querySnapshot.forEach((doc) => {
         items.push(doc.data())
       })
       setTrendingblog(items)
-      setLoading(false)
     })
   }
 
@@ -65,13 +63,6 @@ const Trendingblog = () => {
 
   const { id } = useParams()
 
-  if (loading) {
-    return (
-      <div className='spinner-border text-primary ' role='status'>
-        <span className='sr-only'>Loading...</span>
-      </div>
-    )
-  }
   return (
     <>
       <Navbarpages />
@@ -82,11 +73,30 @@ const Trendingblog = () => {
             return (
               <div className='blogContent' key={item.id}>
                 <div className='blogpage'>
-                  <h1 className=''>{item.title}</h1>
-                  <span></span>
                   <img src={item.image} alt='image' />
-                  <p>{item.text}</p>
+                  <h1 className=''>{item.title}</h1>
+                  <p>
+                    {item.text} Launch of Tesla in India itself, in itself is a
+                    proof of it’s bright future. Apart from this, EVs are being
+                    pushed through e-rickshaws in metros like Delhi and Kolkata.
+                    Delivery ecosystem has started adopting EVs for last mile
+                    deliveries. Battery Swapping stations have also been
+                    started. Launch of Tesla in India itself, in itself is a
+                    proof of it’s bright future. Apart from this, EVs are being
+                    pushed through e-rickshaws in metros like Delhi and Kolkata.
+                    Delivery ecosystem has started adopting EVs for last mile
+                    deliveries. Battery Swapping stations have also been
+                    started. Launch of Tesla in India itself, in itself is a
+                    proof of it’s bright future. Apart from this, EVs are being
+                    pushed through e-rickshaws in metros like Delhi and Kolkata.
+                    Delivery ecosystem has started adopting EVs for last mile
+                    deliveries. Battery Swapping stations have also been
+                    started.
+                  </p>
                 </div>
+
+                {/* SOCIAL SHARE ICONS */}
+                <hr className='hrLine' />
                 <p className='lead social-icon-text'>
                   Also, don't forget to share this article on WhatsApp, LinkedIn
                   and Twitter. Until then...
@@ -116,6 +126,7 @@ const Trendingblog = () => {
                     <TwitterIcon size={42} round={true} />
                   </TwitterShareButton>
                 </div>
+                <hr className='hrLine' />
               </div>
             )
           })}

@@ -72,15 +72,17 @@ const Exploreevblog = () => {
             return (
               <div className='blogContent' key={item.id}>
                 <div className='blogpage'>
-                  <h1 className=''>{item.title}</h1>
-                  <span></span>
                   <img src={item.image} alt='image' />
+                  <h1 className=''>{item.title}</h1>
                   <p>{item.text}</p>
                 </div>
+                <hr className='hrLine' />
+
                 <p className='lead social-icon-text'>
                   Also, don't forget to share this article on WhatsApp, LinkedIn
                   and Twitter. Until then...
                 </p>
+
                 {/* ------------SHARE BUTTONS--------------- */}
                 <div className='share-icons'>
                   <FacebookShareButton
@@ -115,6 +117,7 @@ const Exploreevblog = () => {
                     <TwitterIcon size={42} round={true} />
                   </TwitterShareButton>
                 </div>
+                <hr className='hrLine' />
               </div>
             )
           })}
