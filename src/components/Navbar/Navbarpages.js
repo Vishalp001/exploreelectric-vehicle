@@ -1,12 +1,21 @@
 import React from 'react'
+import $ from 'jquery'
 import '../styles/Navbar.css'
 import { Navbar, Nav } from 'react-bootstrap'
 import logo from '../../images/logo.png'
 import { LinkContainer } from 'react-router-bootstrap'
 
 const Navbarpages = () => {
+  $(window).scroll(function () {
+    if ($(window).scrollTop() > 10) {
+      $('#navBar').addClass('floatingNav')
+    } else {
+      $('#navBar').removeClass('floatingNav')
+    }
+  })
+
   return (
-    <Navbar className='container' expand='lg'>
+    <Navbar id='navBar' className=' navPage' expand='lg'>
       <LinkContainer to='/'>
         <Navbar.Brand>
           <img

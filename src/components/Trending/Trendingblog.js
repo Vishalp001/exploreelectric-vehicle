@@ -7,7 +7,6 @@ import { Card } from 'react-bootstrap'
 import { IoArrowForwardCircle, IoArrowBackCircleSharp } from 'react-icons/io5'
 import { useMediaQuery } from 'react-responsive'
 import { Link } from 'react-router-dom'
-import img from '../../images/trending.jpg'
 import {
   FacebookIcon,
   FacebookShareButton,
