@@ -74,24 +74,7 @@ const Trendingblog = () => {
                 <div className='blogpage'>
                   <img src={item.image} alt='image' />
                   <h1 className=''>{item.title}</h1>
-                  <p>
-                    {item.text} Launch of Tesla in India itself, in itself is a
-                    proof of it’s bright future. Apart from this, EVs are being
-                    pushed through e-rickshaws in metros like Delhi and Kolkata.
-                    Delivery ecosystem has started adopting EVs for last mile
-                    deliveries. Battery Swapping stations have also been
-                    started. Launch of Tesla in India itself, in itself is a
-                    proof of it’s bright future. Apart from this, EVs are being
-                    pushed through e-rickshaws in metros like Delhi and Kolkata.
-                    Delivery ecosystem has started adopting EVs for last mile
-                    deliveries. Battery Swapping stations have also been
-                    started. Launch of Tesla in India itself, in itself is a
-                    proof of it’s bright future. Apart from this, EVs are being
-                    pushed through e-rickshaws in metros like Delhi and Kolkata.
-                    Delivery ecosystem has started adopting EVs for last mile
-                    deliveries. Battery Swapping stations have also been
-                    started.
-                  </p>
+                  <p>{item.text}</p>
                 </div>
 
                 {/* SOCIAL SHARE ICONS */}
