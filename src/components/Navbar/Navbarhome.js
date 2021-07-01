@@ -1,43 +1,57 @@
-import React from 'react'
-import '../styles/Navbar.css'
+import React, { Component } from 'react'
 import { Navbar, Nav } from 'react-bootstrap'
-import logo from '../../images/logo.png'
 import { LinkContainer } from 'react-router-bootstrap'
+import logo from '../../images/logo.png'
+import './navbar.css'
 
-const Navbarjs = () => {
-  return (
-    <Navbar className='container' expand='lg'>
-      <LinkContainer to='/'>
-        <Navbar.Brand>
-          <img
-            src={logo}
-            width='160'
-            height='70'
-            className='d-inline-block align-top'
-            alt='logo'
-          />
-        </Navbar.Brand>
-      </LinkContainer>
+class Navbarjs extends Component {
+  state = { clicked: false }
 
-      <Navbar.Toggle aria-controls='basic-navbar-nav' />
-      <Navbar.Collapse id='basic-navbar-nav'>
-        <Nav className='  ml-auto'>
-          <Nav.Link href='#justin' className='nav-element'>
+  handleClick = () => {
+    this.setState({ clicked: !this.state.clicked })
+  }
+
+  render() {
+    return (
+      <nav className='NavbarItems'>
+        <LinkContainer className='navbar-logo' to='/'>
+          <Navbar.Brand>
+            <img
+              src={logo}
+              width='160'
+              height='70'
+              className='d-inline-block align-top'
+              alt='logo'
+            />
+          </Navbar.Brand>
+        </LinkContainer>
+
+        <div className='menu-icon' onClick={this.handleClick}>
+          <i
+            className={this.state.clicked ? 'fas fa-times' : 'fas fa-bars'}
+          ></i>
+        </div>
+
+        <div className={this.state.clicked ? 'nav-menu active' : 'nav-menu'}>
+          <Nav.Link href='#justin' className='nav-links'>
             Just In
           </Nav.Link>
-          <Nav.Link href='#trending' className='nav-element'>
+
+          <Nav.Link href='#trending' className='nav-links'>
             Trending
           </Nav.Link>
-          <Nav.Link href='#videos' className='nav-element'>
+
+          <Nav.Link href='#videos' className='nav-links'>
             Videos
           </Nav.Link>
-          <Nav.Link href='#exploreev' className='nav-element'>
+
+          <Nav.Link href='#exploreev' className='nav-links'>
             Know EV
           </Nav.Link>
-        </Nav>
-      </Navbar.Collapse>
-    </Navbar>
-  )
+        </div>
+      </nav>
+    )
+  }
 }
 
 export default Navbarjs

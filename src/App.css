@@ -268,7 +268,12 @@
   font-size: 30px;
   text-align: center;
   margin: 50px 0;
-  color: #008e87;
+  background: #185a9d;
+  background: -webkit-linear-gradient(to right, #185a9d 0%, #43cea2 100%);
+  background: -moz-linear-gradient(to right, #185a9d 0%, #43cea2 100%);
+  background: linear-gradient(to right, #185a9d 0%, #43cea2 100%);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent !important;
   font-family: Georgia, 'Times New Roman', Times, serif;
 }
 /* ---------FOOTER----------- */

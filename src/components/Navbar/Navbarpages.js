@@ -1,9 +1,9 @@
-import React from 'react'
+import React, { useState } from 'react'
 import $ from 'jquery'
-import '../styles/Navbar.css'
 import { Navbar, Nav } from 'react-bootstrap'
-import logo from '../../images/logo.png'
 import { LinkContainer } from 'react-router-bootstrap'
+import logo from '../../images/logo.png'
+import './navbar.css'
 
 const Navbarpages = () => {
   $(window).scroll(function () {
@@ -14,9 +14,15 @@ const Navbarpages = () => {
     }
   })
 
+  const [click, setClick] = useState(false)
+
+  const handleClick = () => {
+    setClick(!click)
+  }
+
   return (
-    <Navbar id='navBar' className=' navPage' expand='lg'>
-      <LinkContainer to='/'>
+    <Navbar id='navBar' className='NavbarItems navPage' expand='lg'>
+      <LinkContainer className='navbar-logo' to='/'>
         <Navbar.Brand>
           <img
             src={logo}
@@ -28,23 +34,24 @@ const Navbarpages = () => {
         </Navbar.Brand>
       </LinkContainer>
 
-      <Navbar.Toggle aria-controls='basic-navbar-nav' />
-      <Navbar.Collapse id='basic-navbar-nav'>
-        <Nav className='  ml-auto'>
-          <LinkContainer to='/justinpage'>
-            <Nav.Link className='nav-element'>Just In</Nav.Link>
-          </LinkContainer>
-          <LinkContainer to='/trendingpage'>
-            <Nav.Link className='nav-element'>Trending</Nav.Link>
-          </LinkContainer>
-          <LinkContainer to='/videospage'>
-            <Nav.Link className='nav-element'>Videos</Nav.Link>
-          </LinkContainer>
-          <LinkContainer to='/exploreevpage'>
-            <Nav.Link className='nav-element'>Know EV</Nav.Link>
-          </LinkContainer>
-        </Nav>
-      </Navbar.Collapse>
+      <div className='menu-icon' onClick={handleClick}>
+        <i className={click ? 'fas fa-times' : 'fas fa-bars'}></i>
+      </div>
+
+      <div className={click ? 'nav-menu active' : 'nav-menu'}>
+        <LinkContainer to='/justinpage'>
+          <Nav.Link className='nav-links'>Just In</Nav.Link>
+        </LinkContainer>
+        <LinkContainer to='/trendingpage'>
+          <Nav.Link className='nav-links'>Trending</Nav.Link>
+        </LinkContainer>
+        <LinkContainer to='/videospage'>
+          <Nav.Link className='nav-links'>Videos</Nav.Link>
+        </LinkContainer>
+        <LinkContainer to='/exploreevpage'>
+          <Nav.Link className='nav-links'>Know EV</Nav.Link>
+        </LinkContainer>
+      </div>
     </Navbar>
   )
 }
