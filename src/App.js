@@ -9,6 +9,7 @@ import Trendingblog from './components/Trending/Trendingblog'
 import Trendingpage from './components/Trending/Trendingpage'
 import Videospage from './components/Videos/Videospage'
 import ScrollToTop from './components/Scrolltotop'
+import ErrorPage from './components/404/Errorpage'
 
 function App() {
   return (
@@ -22,6 +23,7 @@ function App() {
         <Route path='/videospage' component={Videospage} />
         <Route path='/trendingblog/:id' component={Trendingblog} />
         <Route path='/exploreevblog/:id' component={Exploreevblog} />
+        <Route path='' component={ErrorPage} />
       </Switch>
       <Footer />
     </>
