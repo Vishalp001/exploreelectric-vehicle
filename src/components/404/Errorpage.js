@@ -2,7 +2,7 @@ import './errorpage.css'
 
 const errorPage = () => {
   return (
-    <div>
+    <div className='bodypage'>
       <div className='background'>
         <div className='ground'></div>
       </div>
@@ -12,10 +12,10 @@ const errorPage = () => {
             <h1 className='heading'>404</h1>
             <p className='subheading'>
               Looks like the page you were looking for is no longer here.
-              <a className='btn' href='/'>
-                Back to Homepage
-              </a>
             </p>
+            <a className='btn' href='/'>
+              Back to Homepage
+            </a>
           </div>
         </div>
         <div className='right-section'>

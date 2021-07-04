@@ -75,6 +75,18 @@ const Exploreevblog = () => {
                   <img src={item.image} alt='image' />
                   <h1 className=''>{item.title}</h1>
                   <p>{item.text}</p>
+
+                  {item.image2 && (
+                    <img className='subImage' src={item.image2} alt='image' />
+                  )}
+
+                  {item.text2 && <p className='subText'>{item.text2}</p>}
+
+                  {item.image3 && (
+                    <img className='subImage' src={item.image3} alt='image' />
+                  )}
+
+                  {item.text3 && <p className='subText'>{item.text3}</p>}
                 </div>
                 <hr className='hrLine' />
 

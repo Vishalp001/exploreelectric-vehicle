@@ -31,6 +31,7 @@ const Justinpage = () => {
 
   const displayUsers = exploreevpage
     .slice(pagesVisited, pagesVisited + usersPerpage)
+    .reverse()
     .map((item) => {
       return (
         <Card key={item.id} style={{ width: '20rem' }}>
@@ -63,8 +64,7 @@ const Justinpage = () => {
           <div className='page-header'>
             <h1>Know EV</h1>
             <p>
-              Your 5 min knowledge booser on Electric Vehicles. Enjoy Learning
-              :)
+              Your 5 min knowledge booser on Electric Vehicles. Enjoy Learning :
             </p>
           </div>
           <div className='exploreevpage'>{displayUsers}</div>

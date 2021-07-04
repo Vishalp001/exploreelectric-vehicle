@@ -1,5 +1,10 @@
 @import url('https://fonts.googleapis.com/css?family=Fira+Sans');
 
+.bodypage {
+  font-family: 'Fira Sans', sans-serif;
+  color: #f5f6fa;
+}
+
 .background {
   position: absolute;
   top: 0;
@@ -101,13 +106,15 @@
 }
 
 .btn {
+  color: #f5f6fa;
   padding: 2px;
-  font-size: 30px;
+  font-size: 25px;
   text-decoration: none;
+  display: block;
 }
 
 .btn:hover {
-  border-bottom: 2px solid #202425;
+  color: #000000;
 }
 
 @keyframes glow {
