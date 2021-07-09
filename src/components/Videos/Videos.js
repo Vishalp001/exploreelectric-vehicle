@@ -1,6 +1,5 @@
 import React, { useState, useEffect } from 'react'
 import firebase from '../../firebase'
-import { useMediaQuery } from 'react-responsive'
 import { IoVideocamSharp } from 'react-icons/io5'
 import { Link } from 'react-router-dom'
 
