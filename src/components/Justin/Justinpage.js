@@ -47,25 +47,6 @@ const Justinpage = () => {
       return (
         <Card className='card' key={item.id}>
           <Card.Img variant='top' src={item.image} />
-          {/* -----SOCIAL BUTTONS------ */}
-          <div className=''>
-            <small>
-              <div className='justin-share-btn'>
-                <FacebookShareButton url={url} shareImage={item.image}>
-                  <FacebookIcon size={25} round={true} />
-                </FacebookShareButton>
-                <LinkedinShareButton url={url} shareImage={item.image}>
-                  <LinkedinIcon size={25} round={true} />
-                </LinkedinShareButton>
-                <WhatsappShareButton url={url} shareImage={item.image}>
-                  <WhatsappIcon size={25} round={true} />
-                </WhatsappShareButton>
-                <TwitterShareButton url={url} shareImage={item.image}>
-                  <TwitterIcon size={25} round={true} />
-                </TwitterShareButton>
-              </div>
-            </small>
-          </div>
         </Card>
       )
     })
@@ -90,6 +71,7 @@ const Justinpage = () => {
               Technologies, <br /> Auto Industries, Govt Policies and Start-ups.
             </p>
           </div>
+
           <div className='justinpage'>{displayUsers}</div>
         </div>
         <ReactPaginate
@@ -103,6 +85,34 @@ const Justinpage = () => {
           disabledClassName={'paginationDIsabled'}
           activeClassName={'paginationActive'}
         />
+
+        <hr className='hrLine-justin' />
+
+        <p className='lead social-icon-text'>
+          Also, don't forget to share this article on WhatsApp, LinkedIn and
+          Twitter. Until then...
+        </p>
+
+        {/* ------------SHARE BUTTONS--------------- */}
+        <div className='share-icons'>
+          <FacebookShareButton url={url}>
+            <FacebookIcon size={42} round={true} />
+          </FacebookShareButton>
+
+          <LinkedinShareButton url={url}>
+            <LinkedinIcon size={42} round={true} />
+          </LinkedinShareButton>
+
+          <WhatsappShareButton url={url}>
+            <WhatsappIcon size={42} round={true} />
+          </WhatsappShareButton>
+
+          <TwitterShareButton url={url}>
+            <TwitterIcon size={42} round={true} />
+          </TwitterShareButton>
+        </div>
+
+        <hr className='hrLine-justin' />
       </div>
     </>
   )

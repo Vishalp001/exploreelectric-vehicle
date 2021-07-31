@@ -6,22 +6,10 @@ import { IoArrowForwardCircle, IoArrowBackCircleSharp } from 'react-icons/io5'
 import { useMediaQuery } from 'react-responsive'
 import { VscPinned } from 'react-icons/vsc'
 import { Link } from 'react-router-dom'
-import {
-  FacebookIcon,
-  FacebookShareButton,
-  TwitterShareButton,
-  TwitterIcon,
-  LinkedinShareButton,
-  LinkedinIcon,
-  WhatsappShareButton,
-  WhatsappIcon,
-} from 'react-share'
 
 const Justin = () => {
   const [justin, setJustin] = useState([])
   const [activeItemIndex, setActiveItemIndex] = useState(0)
-  const url = 'https://xplorev.com/justinpage'
-  // justin.reverse()
 
   const ref = firebase.firestore().collection('justinimage')
 
@@ -95,26 +83,8 @@ const Justin = () => {
           .map((item) => {
             return (
               <div key={item.id}>
-                <Card className='cards'>
+                <Card className='cards justinCards'>
                   <Card.Img variant='top' src={item.image} alt='image' />
-                  <div className=''>
-                    <small>
-                      <div className='justin-share-btn'>
-                        <FacebookShareButton url={url} shareImage={item.image}>
-                          <FacebookIcon size={25} round={true} />
-                        </FacebookShareButton>
-                        <LinkedinShareButton url={url} shareImage={item.image}>
-                          <LinkedinIcon size={25} round={true} />
-                        </LinkedinShareButton>
-                        <WhatsappShareButton url={url} shareImage={item.image}>
-                          <WhatsappIcon size={25} round={true} />
-                        </WhatsappShareButton>
-                        <TwitterShareButton url={url} shareImage={item.image}>
-                          <TwitterIcon size={25} round={true} />
-                        </TwitterShareButton>
-                      </div>
-                    </small>
-                  </div>
                 </Card>
               </div>
             )

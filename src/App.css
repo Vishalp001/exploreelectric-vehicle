@@ -43,6 +43,9 @@
 .cards img {
   border-radius: 15px 15px 0 0;
 }
+.justinCards img {
+  border-radius: 15px;
+}
 .cards h5 {
   font-family: 'Roboto', sans-serif;
   font-weight: 600;
@@ -68,10 +71,6 @@
   height: 500px;
 }
 
-.justin-share-btn * {
-  margin: 5px;
-}
-
 @media only screen and (max-width: 1625px) {
   .exploreevPage,
   .trendingPage {
@@ -83,7 +82,7 @@
 }
 .trendingblogcards,
 .exploreevblogcards {
-  height: 470px;
+  height: 400px;
 }
 .trendingblogcards h5,
 .exploreevblogcards h5 {
@@ -213,7 +212,11 @@
 .hrLine {
   border-top: 1px solid #008e87;
 }
-@media only screen and (max-width: 600px) {
+.hrLine-justin {
+  border-top: 1px solid #008e87;
+  margin: 0 10%;
+}
+@media only screen and (max-width: 360px) {
   .blogpage img {
     width: 100%;
     height: auto;
@@ -228,7 +231,6 @@
     font-family: 'Source Sans Pro', sans-serif;
   }
   .blogpage p {
-    width: 100%;
     font-size: 18px;
     line-height: 32px;
     font-weight: 400;

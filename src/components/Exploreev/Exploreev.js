@@ -79,7 +79,7 @@ export default () => {
             return (
               <div key={item.id}>
                 <Card
-                  className='cards exploreevPage'
+                  className='cards exploreevblogcards'
                   style={{ width: `0 ${width}px` }}
                 >
                   <Card.Img variant='top' src={item.image} />

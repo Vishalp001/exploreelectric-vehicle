@@ -69,7 +69,7 @@ const Justinpage = () => {
           </div>
           <div className='exploreevpage'>{displayUsers}</div>
         </div>
-        {/* <ReactPaginate
+        <ReactPaginate
           previousLabel={<AiOutlineArrowLeft />}
           nextLabel={<AiOutlineArrowRight />}
           pageCount={pageCount}
@@ -79,7 +79,7 @@ const Justinpage = () => {
           nextLinkClassName={'nextBttn'}
           disabledClassName={'paginationDIsabled'}
           activeClassName={'paginationActive'}
-        /> */}
+        />
       </div>
     </>
   )
